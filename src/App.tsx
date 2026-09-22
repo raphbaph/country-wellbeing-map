@@ -14,6 +14,7 @@ const ALL_IDS: IndicatorId[] = [
   "medWealth",
   "avgIncome",
   "medIncome",
+  "incomeGini",
   "violentCrime",
   "lifeExpectancy",
 ];
@@ -116,9 +117,10 @@ export function App() {
         </div>
         <p className="formula">
           Each enabled indicator is turned into a percentile across countries that have a value.
-          The composite is the average of those percentiles. Violent crime is reversed, so a lower
-          homicide rate scores higher. Missing numbers are skipped, not filled in. A country needs
-          data for at least half of the enabled indicators (rounded up) or it stays gray.
+          The composite is the average of those percentiles. Violent crime and income inequality are
+          reversed, so a lower homicide rate and a more equal distribution score higher. Missing
+          numbers are skipped, not filled in. A country needs data for at least half of the enabled
+          indicators (rounded up) or it stays gray.
         </p>
       </header>
       {error ? (

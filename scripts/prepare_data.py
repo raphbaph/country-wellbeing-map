@@ -4,6 +4,7 @@
 Public inputs (downloaded on each run):
   - Gapminder catalog, geometries, and indicator series from
     github.com/dinorgcom/artmarcovici-next public/gapminder
+    (GDP per capita, homicide, life expectancy, income Gini)
   - Our World in Data "daily median income" CSV (World Bank PIP)
   - ISO 3166 names/codes
 
@@ -35,6 +36,9 @@ ANCHOR = 2023
 FALLBACK_MIN = 2018
 MEDIAN_INCOME_MIN = 2015
 MEDIAN_INCOME_MAX = 2025
+# Income Gini is a household survey, like median income, not an annual series.
+GINI_MIN = 2015
+GINI_MAX = 2025
 UA = {"User-Agent": "country-wellbeing-map/1.0"}
 
 
@@ -58,6 +62,23 @@ def pick_year(by_year: dict[int, float], anchor: int = ANCHOR) -> tuple[int, flo
         return None
     year = max(candidates)
     return year, by_year[year]
+
+
+def survey_at(indicator: dict, country_id: str, lo: int, hi: int) -> tuple[int, float] | None:
+    """Latest published survey year inside [lo, hi]. Older and later years are ignored."""
+    rows = indicator["data"].get(country_id)
+    if not rows:
+        return None
+    best: tuple[int, float] | None = None
+    for year, value in zip(indicator["years"], rows):
+        if value is None:
+            continue
+        year = int(year)
+        if year < lo or year > hi:
+            continue
+        if best is None or year > best[0]:
+            best = (year, float(value))
+    return best
 
 
 def series_at(indicator: dict, country_id: str) -> tuple[int, float] | None:
@@ -160,6 +181,7 @@ def main() -> None:
     gdp = fetch_json(f"{GM}/indicators/gdppercapita_us_inflation_adjusted.json")
     murder = fetch_json(f"{GM}/indicators/murder_per_100000_people.json")
     life = fetch_json(f"{GM}/indicators/life_expectancy_years.json")
+    gini = fetch_json(f"{GM}/indicators/inequality_index_gini.json")
     iso = load_iso()
     print("downloading median income...")
     median_income = load_median_income()
@@ -178,10 +200,11 @@ def main() -> None:
         year, value = found
         values[cid][key] = {"v": value, "y": year}
 
-    for cid in set(gdp["data"]) | set(murder["data"]) | set(life["data"]):
+    for cid in set(gdp["data"]) | set(murder["data"]) | set(life["data"]) | set(gini["data"]):
         put(cid, "avgIncome", series_at(gdp, cid))
         put(cid, "violentCrime", series_at(murder, cid))
         put(cid, "lifeExpectancy", series_at(life, cid))
+        put(cid, "incomeGini", survey_at(gini, cid, GINI_MIN, GINI_MAX))
 
     for code, obs in median_income.items():
         # OWID uses ISO3. Kosovo may appear as xkx; keep both if present.
@@ -303,6 +326,16 @@ def main() -> None:
                 "yearNote": "Latest survey year in 2015–2025",
             },
             {
+                "id": "incomeGini",
+                "label": "Income inequality (Gini)",
+                "detail": "0–100 index · higher means more unequal",
+                "unit": "Gini index, 0 (equal) to 100 (unequal)",
+                "higherIsBetter": False,
+                "format": "gini",
+                "source": "Gapminder inequality_index_gini (World Bank Gini index, SI.POV.GINI)",
+                "yearNote": "Latest survey year in 2015–2025",
+            },
+            {
                 "id": "violentCrime",
                 "label": "Violent crimes",
                 "detail": "Homicide rate (age-standardized)",
@@ -384,9 +417,9 @@ def main() -> None:
                 wealth_counts[source][key] += 1
     print("coverage", counts)
     print("wealth", wealth_counts)
-    for cid in ("che", "usa", "lux", "aus", "deu"):
+    for cid in ("che", "usa", "lux", "aus", "deu", "bra", "swe", "zaf"):
         row = next(country for country in countries if country["id"] == cid)
-        print(cid, row["name"], row.get("wealth", {}).get("ubs"))
+        print(cid, row["name"], "ubs", row.get("wealth", {}).get("ubs"), "gini", row["values"].get("incomeGini"))
     print(f"wrote {out_metrics} ({out_metrics.stat().st_size} bytes)")
     print(f"wrote {out_geo} ({out_geo.stat().st_size} bytes)")
 
