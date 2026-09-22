@@ -5,9 +5,10 @@ export type IndicatorId =
   | "medIncome"
   | "incomeGini"
   | "violentCrime"
-  | "lifeExpectancy";
+  | "lifeExpectancy"
+  | "avgIq";
 
-export type ValueFormat = "usd" | "usdPerDay" | "rate" | "gini" | "years";
+export type ValueFormat = "usd" | "usdPerDay" | "rate" | "gini" | "iq" | "years";
 
 export interface IndicatorMeta {
   id: IndicatorId;

@@ -124,6 +124,31 @@ test("income Gini is inverted so a more equal country scores higher", () => {
   );
 });
 
+test("a higher Lynn & Becker IQ ranks above a lower one", () => {
+  const iq: IndicatorMeta = {
+    ...indicators[0],
+    id: "avgIq",
+    label: "Average IQ (Lynn & Becker 2019)",
+    higherIsBetter: true,
+    format: "iq",
+  };
+  const ranked = rankCountries(
+    [
+      country("low", { avgIq: { v: 80, y: 2019 } }),
+      country("high", { avgIq: { v: 105, y: 2019 } }),
+    ],
+    [iq],
+    new Set(["avgIq"]),
+  );
+  assert.deepEqual(
+    ranked.map((row) => [row.id, row.score]),
+    [
+      ["high", 100],
+      ["low", 0],
+    ],
+  );
+});
+
 test("no enabled indicators produces an empty ranking", () => {
   const ranked = rankCountries(
     [country("a", { avgIncome: { v: 1, y: 2023 } })],
