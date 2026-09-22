@@ -302,6 +302,30 @@ h1 {
 .swatch { width: 10px; height: 10px; border-radius: 2px; }
 .ranking-empty { color: var(--muted); }
 
+.results { min-height: 0; min-width: 0; overflow: auto; background: var(--panel); border-left: 1px solid var(--line); }
+.results .ranking { overflow: visible; border-left: 0; }
+.results .ranking ol { overflow: visible; }
+.correlation { padding: 14px; border-bottom: 1px solid var(--line); }
+.correlation h2 { margin: 0 0 10px; font-size: 18px; }
+.correlation p { font-size: 13px; line-height: 1.45; }
+.correlation-pairs { max-height: 158px; overflow: auto; }
+.correlation table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.correlation th { color: var(--muted); text-align: left; font-weight: 400; padding: 5px 3px; }
+.correlation td { border-top: 1px solid var(--line); padding: 5px 3px; }
+.correlation td:first-child { width: 65%; }
+.correlation tr.selected { background: var(--panel-2); }
+.correlation td button { border: 0; padding: 2px 0; background: transparent; text-align: left; cursor: pointer; }
+.correlation-number { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.correlation-direction { color: var(--accent); }
+.correlation-axis-label { font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+.correlation-plot { display: block; width: 100%; }
+.correlation-plot text { fill: var(--muted); font-size: 11px; }
+.correlation-frame { fill: var(--ocean); stroke: var(--line); }
+.correlation-point { fill: var(--accent); opacity: .7; cursor: pointer; }
+.correlation-point.active, .correlation-point:hover, .correlation-point:focus { opacity: 1; stroke: var(--text); stroke-width: 2; }
+.correlation-note { color: var(--muted); margin-bottom: 0; }
+.correlation-country { overflow-wrap: anywhere; }
+
 button:focus-visible, input:focus-visible, .toggle:focus-within {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
@@ -311,6 +335,6 @@ button:focus-visible, input:focus-visible, .toggle:focus-within {
   .app { height: auto; min-height: 100%; }
   .topbar, .workspace { grid-template-columns: 1fr; }
   .map-host { height: 68vh; }
-  .ranking { max-height: 70vh; }
+  .results { overflow: visible; border-left: 0; }
   .side { border-right: 0; border-bottom: 1px solid var(--line); }
 }
