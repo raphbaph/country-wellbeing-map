@@ -24,15 +24,40 @@ export interface MetricValue {
   y: number;
 }
 
+export type WealthSourceId = "ubs" | "wid";
+
+export interface WealthFieldCopy {
+  detail: string;
+  unit: string;
+  source: string;
+  yearNote: string;
+}
+
+export interface WealthSourceSpec {
+  id: WealthSourceId;
+  label: string;
+  avgWealth: WealthFieldCopy;
+  medWealth: WealthFieldCopy;
+}
+
+export interface WealthSourcesFile {
+  default: WealthSourceId;
+  options: WealthSourceSpec[];
+}
+
 export interface CountryMetrics {
   id: string;
   name: string;
   values: Partial<Record<IndicatorId, MetricValue>>;
+  wealth?: Partial<
+    Record<WealthSourceId, Partial<Record<"avgWealth" | "medWealth", MetricValue>>>
+  >;
 }
 
 export interface MetricsFile {
   anchorYear: number;
   indicators: IndicatorMeta[];
+  wealthSources: WealthSourcesFile;
   countries: CountryMetrics[];
 }
 

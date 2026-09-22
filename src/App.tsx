@@ -2,10 +2,12 @@ import { useEffect, useMemo, useState } from "react";
 import { CountryDetail } from "./components/CountryDetail";
 import { IndicatorToggles } from "./components/IndicatorToggles";
 import { RankingList } from "./components/RankingList";
+import { WealthSourceControl } from "./components/WealthSourceControl";
 import { WorldMap } from "./components/WorldMap";
 import { scoreColor } from "./color";
 import { minimumCoverage, rankCountries } from "./score";
-import type { IndicatorId, MetricsFile, WorldCollection } from "./types";
+import type { IndicatorId, MetricsFile, WealthSourceId, WorldCollection } from "./types";
+import { applyWealthSource, indicatorsForWealthSource } from "./wealth";
 
 const ALL_IDS: IndicatorId[] = [
   "avgWealth",
@@ -24,6 +26,7 @@ export function App() {
   const [pinnedId, setPinnedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  const [wealthSource, setWealthSource] = useState<WealthSourceId>("ubs");
 
   useEffect(() => {
     let cancelled = false;
@@ -59,21 +62,33 @@ export function App() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  const activeWealthSpec = metrics?.wealthSources.options.find((option) => option.id === wealthSource);
+  const viewIndicators = useMemo(
+    () =>
+      metrics && activeWealthSpec
+        ? indicatorsForWealthSource(metrics.indicators, activeWealthSpec)
+        : metrics?.indicators ?? [],
+    [metrics, activeWealthSpec],
+  );
+  const viewCountries = useMemo(
+    () => (metrics ? applyWealthSource(metrics.countries, wealthSource) : []),
+    [metrics, wealthSource],
+  );
   const ranked = useMemo(
-    () => (metrics ? rankCountries(metrics.countries, metrics.indicators, enabled) : []),
-    [metrics, enabled],
+    () => (metrics ? rankCountries(viewCountries, viewIndicators, enabled) : []),
+    [metrics, viewCountries, viewIndicators, enabled],
   );
   const rankedById = useMemo(() => new Map(ranked.map((row) => [row.id, row])), [ranked]);
   const countryById = useMemo(
-    () => new Map((metrics?.countries ?? []).map((country) => [country.id, country])),
-    [metrics],
+    () => new Map(viewCountries.map((country) => [country.id, country])),
+    [viewCountries],
   );
   const nameById = useMemo(() => {
     const names = new Map<string, string>();
     for (const feature of world?.features ?? []) names.set(feature.properties.id, feature.properties.name);
-    for (const country of metrics?.countries ?? []) names.set(country.id, country.name);
+    for (const country of viewCountries) names.set(country.id, country.name);
     return names;
-  }, [world, metrics]);
+  }, [world, viewCountries]);
 
   const activeId = hoveredId ?? pinnedId;
   const activeCountry = activeId
@@ -116,7 +131,12 @@ export function App() {
       ) : (
         <main className="workspace">
           <aside className="side">
-            <IndicatorToggles indicators={metrics.indicators} enabled={enabled} onToggle={toggle} />
+            <WealthSourceControl
+              sources={metrics.wealthSources}
+              selected={wealthSource}
+              onChange={setWealthSource}
+            />
+            <IndicatorToggles indicators={viewIndicators} enabled={enabled} onToggle={toggle} />
             <div className="legend" aria-hidden={enabled.size === 0}>
               <span>Lower</span>
               <span
@@ -139,7 +159,7 @@ export function App() {
               country={activeCountry}
               ranked={activeRanked}
               rank={activePlace}
-              indicators={metrics.indicators}
+              indicators={viewIndicators}
               enabled={enabled}
               anyEnabled={enabled.size > 0}
             />
@@ -154,7 +174,7 @@ export function App() {
           />
           <RankingList
             rows={ranked}
-            indicators={metrics.indicators}
+            indicators={viewIndicators}
             anyEnabled={enabled.size > 0}
             activeId={activeId}
             query={query}
