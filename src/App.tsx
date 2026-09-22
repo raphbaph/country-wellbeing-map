@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { CountryDetail } from "./components/CountryDetail";
+import { CorrelationPanel } from "./components/CorrelationPanel";
 import { IndicatorToggles } from "./components/IndicatorToggles";
 import { RankingList } from "./components/RankingList";
 import { WealthSourceControl } from "./components/WealthSourceControl";
@@ -175,6 +176,14 @@ export function App() {
             onHover={setHoveredId}
             onSelect={(id) => setPinnedId((current) => (current === id ? null : id))}
           />
+          <aside className="results">
+          <CorrelationPanel
+            countries={viewCountries}
+            indicators={viewIndicators}
+            enabled={enabled}
+            activeId={activeId}
+            onSelect={setPinnedId}
+          />
           <RankingList
             rows={ranked}
             indicators={viewIndicators}
@@ -185,6 +194,7 @@ export function App() {
             onHover={setHoveredId}
             onSelect={(id) => setPinnedId((current) => (current === id ? null : id))}
           />
+          </aside>
         </main>
       )}
     </div>

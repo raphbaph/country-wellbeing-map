@@ -76,6 +76,20 @@ If every toggle is off, the map is a single neutral color and the ranking is emp
 
 Best-to-worst order is the composite descending. Ties break toward the country with more of the enabled indicators present, then by name.
 
+## Indicator correlations
+
+The panel above the ranking compares every pair of enabled indicators. Two selections produce one
+comparison; three produce three. Select a pair to view its scatter plot, then click or keyboard-select
+a country point to show its country details on the map. The ranking remains available below.
+
+Pearson's r uses original, untransformed values and equal country weights. Crime and Gini are not
+reversed as they are for the composite. Each pair includes only countries with finite values for both
+indicators, independently of other enabled indicators, ranking eligibility, and the ranking search.
+The sample size is shown for every pair. Fewer than three observations or a constant series produces
+an unavailable coefficient, not zero. Changing the wealth source updates both values and coverage
+without filling gaps from another source. Observation years can differ and are shown on country points.
+Correlation describes a linear association, not causation or statistical significance.
+
 ## Attribution
 
 - Country shapes, names, GDP per capita, income Gini, homicide, and life expectancy: Gapminder data as packaged in [dinorgcom/artmarcovici-next](https://github.com/dinorgcom/artmarcovici-next) `public/gapminder` (series originally from the World Bank, IHME/WHO-style violence mortality, and Gapminder’s life expectancy compilation). The Gini file is the World Bank Gini index (`SI.POV.GINI`). Free to reuse with attribution to Gapminder and the original source.
