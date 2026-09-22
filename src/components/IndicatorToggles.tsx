@@ -29,6 +29,18 @@ export function IndicatorToggles({ indicators, enabled, onToggle }: IndicatorTog
           </label>
         );
       })}
+      {indicators.filter((indicator) => indicator.id === "avgWages").map((indicator) => (
+        <details className="wage-notes" key={indicator.id}>
+          <summary>Wage data & coverage</summary>
+          <p>{indicator.yearNote}. Missing values are not estimated.</p>
+          <p>Mean monthly employee earnings, generally gross, adjusted for purchasing power
+            (2021 PPP$). Not take-home pay or an amount exchangeable into US dollars.
+            National coverage and working hours can differ; these are not uniform full-time salaries.</p>
+          <p>Explicitly labelled median, net, full-time-only, full-time-equivalent and unreliable
+            observations are excluded. Values before 2015 are omitted.</p>
+          <a href={indicator.sourceUrl} target="_blank" rel="noreferrer">ILOSTAT methodology</a>
+        </details>
+      ))}
     </fieldset>
   );
 }

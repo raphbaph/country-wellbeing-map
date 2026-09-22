@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "node --experimental-strip-types --test test/score.test.ts test/wealth.test.ts test/iq.test.ts test/correlation.test.ts"
+    "test": "node --experimental-strip-types --test test/score.test.ts test/wealth.test.ts test/iq.test.ts test/correlation.test.ts test/wages.test.ts"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",

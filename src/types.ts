@@ -2,13 +2,14 @@ export type IndicatorId =
   | "avgWealth"
   | "medWealth"
   | "avgIncome"
+  | "avgWages"
   | "medIncome"
   | "incomeGini"
   | "violentCrime"
   | "lifeExpectancy"
   | "avgIq";
 
-export type ValueFormat = "usd" | "usdPerDay" | "rate" | "gini" | "iq" | "years";
+export type ValueFormat = "usd" | "usdPerDay" | "pppPerMonth" | "rate" | "gini" | "iq" | "years";
 
 export interface IndicatorMeta {
   id: IndicatorId;
@@ -18,12 +19,15 @@ export interface IndicatorMeta {
   higherIsBetter: boolean;
   format: ValueFormat;
   source: string;
+  sourceUrl?: string;
   yearNote: string;
 }
 
 export interface MetricValue {
   v: number;
   y: number;
+  source?: string;
+  note?: string;
 }
 
 export type WealthSourceId = "ubs" | "wid";

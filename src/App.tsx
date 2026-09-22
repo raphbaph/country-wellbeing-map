@@ -14,6 +14,7 @@ const ALL_IDS: IndicatorId[] = [
   "avgWealth",
   "medWealth",
   "avgIncome",
+  "avgWages",
   "medIncome",
   "incomeGini",
   "violentCrime",

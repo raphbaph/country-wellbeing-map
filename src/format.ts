@@ -9,6 +9,7 @@ export function formatValue(format: ValueFormat, value: number, compact = false)
     return `${sign}$${abs.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
   }
   if (format === "usdPerDay") return `$${value.toFixed(2)}/day`;
+  if (format === "pppPerMonth") return `${value.toLocaleString("en-US", { maximumFractionDigits: 0 })} PPP$/mo`;
   if (format === "rate") return `${value.toFixed(2)} / 100k`;
   if (format === "gini") return value.toFixed(1);
   if (format === "iq") return value.toFixed(2);
