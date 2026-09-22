@@ -17,6 +17,7 @@ const ALL_IDS: IndicatorId[] = [
   "incomeGini",
   "violentCrime",
   "lifeExpectancy",
+  "avgIq",
 ];
 
 export function App() {

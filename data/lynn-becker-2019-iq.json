@@ -1,0 +1,824 @@
+{
+  "citation": "Lynn, R., & Becker, D. (2019). The Intelligence of Nations. London: Ulster Institute for Social Research. ISBN 9780993000164.",
+  "dataset": "David Becker, The NIQ dataset, version 1.3.3, 21 June 2019.",
+  "datasetUrl": "https://viewoniq.org/wp-content/uploads/2019/07/NIQ-DATASET-V1.3.3.zip",
+  "pageUrl": "https://viewoniq.org/?page_id=9",
+  "column": "FAV sheet, QNW+SAS (manual name NIQ-QNW+SAS): mean of the quality-and-sample-size-weighted psychometric national IQ and the school-assessment IQ. If only one of those exists, that value is used.",
+  "scale": "IQ points on the British Greenwich norm (United Kingdom school-assessment anchor 100).",
+  "year": 2019,
+  "rounding": "Workbook formulas were rounded half-up to two decimal places, the precision used in the book.",
+  "geographicFillIn": "Column QNW+SAS+GEO, which fills countries that have no psychometric or school-assessment score with a neighbor average, is not used.",
+  "codeNotes": "The workbook stores France as 'FRA ' (trailing space). That code is normalized to FRA.",
+  "countries": {
+    "ago": {
+      "name": "Angola",
+      "iq": 75.1
+    },
+    "alb": {
+      "name": "Albania",
+      "iq": 81.75
+    },
+    "are": {
+      "name": "United Arab Emirates",
+      "iq": 82.05
+    },
+    "arg": {
+      "name": "Argentina",
+      "iq": 87.47
+    },
+    "arm": {
+      "name": "Armenia",
+      "iq": 88.82
+    },
+    "aus": {
+      "name": "Australia",
+      "iq": 99.25
+    },
+    "aut": {
+      "name": "Austria",
+      "iq": 98.57
+    },
+    "aze": {
+      "name": "Azerbaijan",
+      "iq": 84.81
+    },
+    "bel": {
+      "name": "Belgium",
+      "iq": 97.61
+    },
+    "ben": {
+      "name": "Benin",
+      "iq": 70.36
+    },
+    "bfa": {
+      "name": "Burkina Faso",
+      "iq": 73.8
+    },
+    "bgd": {
+      "name": "Bangladesh",
+      "iq": 74.36
+    },
+    "bgr": {
+      "name": "Bulgaria",
+      "iq": 90.99
+    },
+    "bhr": {
+      "name": "Bahrain",
+      "iq": 83.6
+    },
+    "bhs": {
+      "name": "Bahamas, The",
+      "iq": 86.95
+    },
+    "bih": {
+      "name": "Bosnia and Herzegovina",
+      "iq": 88.53
+    },
+    "blr": {
+      "name": "Belarus",
+      "iq": 101.6
+    },
+    "blz": {
+      "name": "Belize",
+      "iq": 62.55
+    },
+    "bmu": {
+      "name": "Bermuda",
+      "iq": 93.15
+    },
+    "bol": {
+      "name": "Bolivia",
+      "iq": 77.35
+    },
+    "bra": {
+      "name": "Brazil",
+      "iq": 83.42
+    },
+    "brb": {
+      "name": "Barbados",
+      "iq": 91.69
+    },
+    "bwa": {
+      "name": "Botswana",
+      "iq": 69.45
+    },
+    "can": {
+      "name": "Canada",
+      "iq": 99.38
+    },
+    "che": {
+      "name": "Switzerland",
+      "iq": 99.25
+    },
+    "chl": {
+      "name": "Chile",
+      "iq": 87.91
+    },
+    "chn": {
+      "name": "China",
+      "iq": 103.95
+    },
+    "cod": {
+      "name": "Congo, Democratic Republic of the",
+      "iq": 65.67
+    },
+    "cog": {
+      "name": "Congo, Republic of the",
+      "iq": 62.97
+    },
+    "col": {
+      "name": "Colombia",
+      "iq": 82.99
+    },
+    "cri": {
+      "name": "Costa Rica",
+      "iq": 88.44
+    },
+    "cub": {
+      "name": "Cuba",
+      "iq": 83.78
+    },
+    "cyp": {
+      "name": "Cyprus",
+      "iq": 93.39
+    },
+    "cze": {
+      "name": "Czechia",
+      "iq": 94.92
+    },
+    "deu": {
+      "name": "Germany",
+      "iq": 100.41
+    },
+    "dji": {
+      "name": "Djibouti",
+      "iq": 60.0
+    },
+    "dma": {
+      "name": "Dominica",
+      "iq": 66.02
+    },
+    "dnk": {
+      "name": "Denmark",
+      "iq": 97.91
+    },
+    "dom": {
+      "name": "Dominican Republic",
+      "iq": 82.05
+    },
+    "dza": {
+      "name": "Algeria",
+      "iq": 76.0
+    },
+    "ecu": {
+      "name": "Ecuador",
+      "iq": 78.24
+    },
+    "egy": {
+      "name": "Egypt",
+      "iq": 76.3
+    },
+    "eri": {
+      "name": "Eritrea",
+      "iq": 68.6
+    },
+    "esp": {
+      "name": "Spain",
+      "iq": 93.87
+    },
+    "est": {
+      "name": "Estonia",
+      "iq": 101.09
+    },
+    "eth": {
+      "name": "Ethiopia",
+      "iq": 68.56
+    },
+    "fin": {
+      "name": "Finland",
+      "iq": 100.55
+    },
+    "fra": {
+      "name": "France",
+      "iq": 96.91
+    },
+    "gbr": {
+      "name": "United Kingdom",
+      "iq": 99.22
+    },
+    "geo": {
+      "name": "Georgia",
+      "iq": 84.5
+    },
+    "gha": {
+      "name": "Ghana",
+      "iq": 60.98
+    },
+    "gmb": {
+      "name": "Gambia, The",
+      "iq": 60.0
+    },
+    "grc": {
+      "name": "Greece",
+      "iq": 90.74
+    },
+    "grl": {
+      "name": "Greenland",
+      "iq": 94.68
+    },
+    "gtm": {
+      "name": "Guatemala",
+      "iq": 61.29
+    },
+    "hkg": {
+      "name": "Hong Kong",
+      "iq": 105.38
+    },
+    "hnd": {
+      "name": "Honduras",
+      "iq": 62.16
+    },
+    "hrv": {
+      "name": "Croatia",
+      "iq": 95.65
+    },
+    "hti": {
+      "name": "Haiti",
+      "iq": 88.6
+    },
+    "hun": {
+      "name": "Hungary",
+      "iq": 99.25
+    },
+    "idn": {
+      "name": "Indonesia",
+      "iq": 78.79
+    },
+    "ind": {
+      "name": "India",
+      "iq": 76.16
+    },
+    "irl": {
+      "name": "Ireland",
+      "iq": 95.16
+    },
+    "irn": {
+      "name": "Iran",
+      "iq": 80.0
+    },
+    "irq": {
+      "name": "Iraq",
+      "iq": 89.45
+    },
+    "isl": {
+      "name": "Iceland",
+      "iq": 98.26
+    },
+    "isr": {
+      "name": "Israel",
+      "iq": 92.47
+    },
+    "ita": {
+      "name": "Italy",
+      "iq": 94.16
+    },
+    "jam": {
+      "name": "Jamaica",
+      "iq": 75.31
+    },
+    "jor": {
+      "name": "Jordan",
+      "iq": 80.66
+    },
+    "jpn": {
+      "name": "Japan",
+      "iq": 106.43
+    },
+    "kaz": {
+      "name": "Kazakhstan",
+      "iq": 88.89
+    },
+    "ken": {
+      "name": "Kenya",
+      "iq": 75.22
+    },
+    "kgz": {
+      "name": "Kyrgyzstan",
+      "iq": 79.09
+    },
+    "khm": {
+      "name": "Cambodia",
+      "iq": 99.73
+    },
+    "kor": {
+      "name": "Korea, South",
+      "iq": 102.46
+    },
+    "kwt": {
+      "name": "Kuwait",
+      "iq": 78.62
+    },
+    "lao": {
+      "name": "Laos",
+      "iq": 80.12
+    },
+    "lbn": {
+      "name": "Lebanon",
+      "iq": 81.75
+    },
+    "lby": {
+      "name": "Libya",
+      "iq": 81.0
+    },
+    "lie": {
+      "name": "Liechtenstein",
+      "iq": 101.07
+    },
+    "lka": {
+      "name": "Sri Lanka",
+      "iq": 86.62
+    },
+    "ltu": {
+      "name": "Lithuania",
+      "iq": 95.99
+    },
+    "lux": {
+      "name": "Luxembourg",
+      "iq": 99.87
+    },
+    "lva": {
+      "name": "Latvia",
+      "iq": 94.79
+    },
+    "mac": {
+      "name": "Macau",
+      "iq": 99.82
+    },
+    "mar": {
+      "name": "Morocco",
+      "iq": 67.01
+    },
+    "mda": {
+      "name": "Moldova",
+      "iq": 89.98
+    },
+    "mex": {
+      "name": "Mexico",
+      "iq": 87.73
+    },
+    "mhl": {
+      "name": "Marshall Islands",
+      "iq": 83.96
+    },
+    "mkd": {
+      "name": "Macedonia",
+      "iq": 81.91
+    },
+    "mli": {
+      "name": "Mali",
+      "iq": 60.0
+    },
+    "mlt": {
+      "name": "Malta",
+      "iq": 91.29
+    },
+    "mne": {
+      "name": "Montenegro",
+      "iq": 85.78
+    },
+    "mng": {
+      "name": "Mongolia",
+      "iq": 91.03
+    },
+    "mus": {
+      "name": "Mauritius",
+      "iq": 86.56
+    },
+    "mwi": {
+      "name": "Malawi",
+      "iq": 69.7
+    },
+    "mys": {
+      "name": "Malaysia",
+      "iq": 87.58
+    },
+    "nam": {
+      "name": "Namibia",
+      "iq": 66.19
+    },
+    "nga": {
+      "name": "Nigeria",
+      "iq": 67.83
+    },
+    "nic": {
+      "name": "Nicaragua",
+      "iq": 60.22
+    },
+    "nld": {
+      "name": "Netherlands",
+      "iq": 100.81
+    },
+    "nor": {
+      "name": "Norway",
+      "iq": 97.21
+    },
+    "npl": {
+      "name": "Nepal",
+      "iq": 60.0
+    },
+    "nzl": {
+      "name": "New Zealand",
+      "iq": 98.85
+    },
+    "omn": {
+      "name": "Oman",
+      "iq": 78.71
+    },
+    "pak": {
+      "name": "Pakistan",
+      "iq": 80.05
+    },
+    "pan": {
+      "name": "Panama",
+      "iq": 79.0
+    },
+    "per": {
+      "name": "Peru",
+      "iq": 81.42
+    },
+    "phl": {
+      "name": "Philippines",
+      "iq": 81.55
+    },
+    "pol": {
+      "name": "Poland",
+      "iq": 96.42
+    },
+    "pri": {
+      "name": "Puerto Rico",
+      "iq": 81.89
+    },
+    "prt": {
+      "name": "Portugal",
+      "iq": 92.84
+    },
+    "pse": {
+      "name": "Gaza Strip",
+      "iq": 77.76
+    },
+    "qat": {
+      "name": "Qatar",
+      "iq": 80.78
+    },
+    "rou": {
+      "name": "Romania",
+      "iq": 86.92
+    },
+    "rus": {
+      "name": "Russia",
+      "iq": 96.4
+    },
+    "sau": {
+      "name": "Saudi Arabia",
+      "iq": 76.49
+    },
+    "sdn": {
+      "name": "Sudan",
+      "iq": 77.83
+    },
+    "sgp": {
+      "name": "Singapore",
+      "iq": 106.16
+    },
+    "sle": {
+      "name": "Sierra Leone",
+      "iq": 60.0
+    },
+    "slv": {
+      "name": "El Salvador",
+      "iq": 69.63
+    },
+    "som": {
+      "name": "Somalia",
+      "iq": 67.67
+    },
+    "srb": {
+      "name": "Serbia",
+      "iq": 89.64
+    },
+    "ssd": {
+      "name": "South Sudan",
+      "iq": 60.11
+    },
+    "svk": {
+      "name": "Slovakia",
+      "iq": 96.32
+    },
+    "svn": {
+      "name": "Slovenia",
+      "iq": 98.66
+    },
+    "swe": {
+      "name": "Sweden",
+      "iq": 96.98
+    },
+    "syc": {
+      "name": "Seychelles",
+      "iq": 78.76
+    },
+    "syr": {
+      "name": "Syria",
+      "iq": 74.41
+    },
+    "tha": {
+      "name": "Thailand",
+      "iq": 89.13
+    },
+    "tjk": {
+      "name": "Tajikistan",
+      "iq": 87.71
+    },
+    "tto": {
+      "name": "Trinidad and Tobago",
+      "iq": 85.63
+    },
+    "tun": {
+      "name": "Tunisia",
+      "iq": 79.22
+    },
+    "tur": {
+      "name": "Turkey",
+      "iq": 87.05
+    },
+    "twn": {
+      "name": "Taiwan",
+      "iq": 106.49
+    },
+    "tza": {
+      "name": "Tanzania",
+      "iq": 74.76
+    },
+    "uga": {
+      "name": "Uganda",
+      "iq": 76.48
+    },
+    "ukr": {
+      "name": "Ukraine",
+      "iq": 90.07
+    },
+    "ury": {
+      "name": "Uruguay",
+      "iq": 87.59
+    },
+    "usa": {
+      "name": "United States",
+      "iq": 97.46
+    },
+    "uzb": {
+      "name": "Uzbekistan",
+      "iq": 89.01
+    },
+    "vct": {
+      "name": "Saint Vincent and the Grenadines",
+      "iq": 63.42
+    },
+    "ven": {
+      "name": "Venezuela",
+      "iq": 83.06
+    },
+    "vnm": {
+      "name": "Vietnam",
+      "iq": 89.53
+    },
+    "yem": {
+      "name": "Yemen",
+      "iq": 66.11
+    },
+    "zaf": {
+      "name": "South Africa",
+      "iq": 69.8
+    },
+    "zwe": {
+      "name": "Zimbabwe",
+      "iq": 74.01
+    }
+  },
+  "unmatched": [
+    {
+      "iso3": "ANT",
+      "name": "Netherlands Antilles",
+      "iq": 80.01,
+      "reason": "Netherlands Antilles was dissolved in 2010. This map has no Gapminder id or shape for ANT, so the published score is not assigned to a successor territory."
+    }
+  ],
+  "omittedGeographicOnly": [
+    {
+      "iso3": "AFG",
+      "name": "Afghanistan"
+    },
+    {
+      "iso3": "AND",
+      "name": "Andorra"
+    },
+    {
+      "iso3": "ATG",
+      "name": "Antigua and Barbuda"
+    },
+    {
+      "iso3": "BDI",
+      "name": "Burundi"
+    },
+    {
+      "iso3": "BRN",
+      "name": "Brunei"
+    },
+    {
+      "iso3": "BTN",
+      "name": "Bhutan"
+    },
+    {
+      "iso3": "CAF",
+      "name": "Central African Rep."
+    },
+    {
+      "iso3": "CIV",
+      "name": "Cote d'Ivoire"
+    },
+    {
+      "iso3": "CMR",
+      "name": "Cameroon"
+    },
+    {
+      "iso3": "COK",
+      "name": "Cook Islands"
+    },
+    {
+      "iso3": "COM",
+      "name": "Comoros"
+    },
+    {
+      "iso3": "CPV",
+      "name": "Cabo Verde"
+    },
+    {
+      "iso3": "CYM",
+      "name": "Cayman Islands"
+    },
+    {
+      "iso3": "FJI",
+      "name": "Fiji"
+    },
+    {
+      "iso3": "FSM",
+      "name": "Micronesia, Federated States of"
+    },
+    {
+      "iso3": "GAB",
+      "name": "Gabon"
+    },
+    {
+      "iso3": "GIN",
+      "name": "Guinea"
+    },
+    {
+      "iso3": "GRD",
+      "name": "Grenada"
+    },
+    {
+      "iso3": "GUY",
+      "name": "Guyana"
+    },
+    {
+      "iso3": "KIR",
+      "name": "Kiribati"
+    },
+    {
+      "iso3": "KNA",
+      "name": "Saint Kitts and Nevis"
+    },
+    {
+      "iso3": "LBR",
+      "name": "Liberia"
+    },
+    {
+      "iso3": "LCA",
+      "name": "Saint Lucia"
+    },
+    {
+      "iso3": "LSO",
+      "name": "Lesotho"
+    },
+    {
+      "iso3": "MDG",
+      "name": "Madagascar"
+    },
+    {
+      "iso3": "MDV",
+      "name": "Maldives"
+    },
+    {
+      "iso3": "MMR",
+      "name": "Myanmar"
+    },
+    {
+      "iso3": "MNP",
+      "name": "Mariana Islands"
+    },
+    {
+      "iso3": "MOZ",
+      "name": "Mozambique"
+    },
+    {
+      "iso3": "MRT",
+      "name": "Mauritania"
+    },
+    {
+      "iso3": "NCL",
+      "name": "New Caledonia"
+    },
+    {
+      "iso3": "NER",
+      "name": "Niger"
+    },
+    {
+      "iso3": "PNG",
+      "name": "Papua New Guinea"
+    },
+    {
+      "iso3": "PRK",
+      "name": "Korea, North"
+    },
+    {
+      "iso3": "PRY",
+      "name": "Paraguay"
+    },
+    {
+      "iso3": "RWA",
+      "name": "Rwanda"
+    },
+    {
+      "iso3": "SEN",
+      "name": "Senegal"
+    },
+    {
+      "iso3": "SHN",
+      "name": "Saint Helena, Ascension, and Tristan da Cunha"
+    },
+    {
+      "iso3": "SLB",
+      "name": "Solomon Islands"
+    },
+    {
+      "iso3": "STP",
+      "name": "Sao Tome and Principe"
+    },
+    {
+      "iso3": "SUR",
+      "name": "Suriname"
+    },
+    {
+      "iso3": "SWZ",
+      "name": "Swaziland"
+    },
+    {
+      "iso3": "TCA",
+      "name": "Turks and Caicos Islands"
+    },
+    {
+      "iso3": "TCD",
+      "name": "Chad"
+    },
+    {
+      "iso3": "TGO",
+      "name": "Togo"
+    },
+    {
+      "iso3": "TKM",
+      "name": "Turkmenistan"
+    },
+    {
+      "iso3": "TLS",
+      "name": "Timor-Leste"
+    },
+    {
+      "iso3": "TON",
+      "name": "Tonga"
+    },
+    {
+      "iso3": "VGB",
+      "name": "Virgin Islands"
+    },
+    {
+      "iso3": "VUT",
+      "name": "Vanuatu"
+    },
+    {
+      "iso3": "WSM",
+      "name": "Samoa"
+    },
+    {
+      "iso3": "ZMB",
+      "name": "Zambia"
+    }
+  ]
+}

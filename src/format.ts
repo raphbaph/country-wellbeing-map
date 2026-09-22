@@ -11,6 +11,7 @@ export function formatValue(format: ValueFormat, value: number, compact = false)
   if (format === "usdPerDay") return `$${value.toFixed(2)}/day`;
   if (format === "rate") return `${value.toFixed(2)} / 100k`;
   if (format === "gini") return value.toFixed(1);
+  if (format === "iq") return value.toFixed(2);
   return `${value.toFixed(1)} years`;
 }
 

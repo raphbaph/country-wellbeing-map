@@ -5,6 +5,7 @@ Public inputs (downloaded on each run):
   - Gapminder catalog, geometries, and indicator series from
     github.com/dinorgcom/artmarcovici-next public/gapminder
     (GDP per capita, homicide, life expectancy, income Gini)
+  - data/lynn-becker-2019-iq.json (Lynn & Becker 2019 / NIQ V1.3.3, QNW+SAS)
   - Our World in Data "daily median income" CSV (World Bank PIP)
   - ISO 3166 names/codes
 
@@ -226,6 +227,13 @@ def main() -> None:
         if median:
             wid_wealth[cid]["medWealth"] = {"v": median[1], "y": median[0]}
 
+    iq_path = ROOT / "data" / "lynn-becker-2019-iq.json"
+    iq_file = json.loads(iq_path.read_text())
+    iq_year = int(iq_file["year"])
+    for cid, row in iq_file["countries"].items():
+        values[cid]["avgIq"] = {"v": row["iq"], "y": iq_year}
+        names.setdefault(cid, row["name"])
+
     ubs_path = ROOT / "data" / "ubs-wealth.json"
     ubs = json.loads(ubs_path.read_text())
     ubs_year = int(ubs["dataYear"])
@@ -355,6 +363,16 @@ def main() -> None:
                 "source": "Gapminder life_expectancy_years",
                 "yearNote": "2023, or latest year in 2018–2023",
             },
+            {
+                "id": "avgIq",
+                "label": "Average IQ (Lynn & Becker 2019)",
+                "detail": "National IQ compilation · scientifically contested",
+                "unit": "IQ points, British mean 100",
+                "higherIsBetter": True,
+                "format": "iq",
+                "source": "Lynn & Becker 2019, NIQ dataset V1.3.3 column QNW+SAS",
+                "yearNote": "2019 cross-section",
+            },
         ],
         "wealthSources": {
             "default": "ubs",
@@ -417,9 +435,18 @@ def main() -> None:
                 wealth_counts[source][key] += 1
     print("coverage", counts)
     print("wealth", wealth_counts)
-    for cid in ("che", "usa", "lux", "aus", "deu", "bra", "swe", "zaf"):
+    for cid in ("che", "usa", "lux", "aus", "deu", "bra", "swe", "zaf", "jpn", "gbr"):
         row = next(country for country in countries if country["id"] == cid)
-        print(cid, row["name"], "ubs", row.get("wealth", {}).get("ubs"), "gini", row["values"].get("incomeGini"))
+        print(
+            cid,
+            row["name"],
+            "ubs",
+            row.get("wealth", {}).get("ubs"),
+            "gini",
+            row["values"].get("incomeGini"),
+            "iq",
+            row["values"].get("avgIq"),
+        )
     print(f"wrote {out_metrics} ({out_metrics.stat().st_size} bytes)")
     print(f"wrote {out_geo} ({out_geo.stat().st_size} bytes)")
 
