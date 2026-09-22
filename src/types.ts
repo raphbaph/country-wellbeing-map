@@ -3,10 +3,11 @@ export type IndicatorId =
   | "medWealth"
   | "avgIncome"
   | "medIncome"
+  | "incomeGini"
   | "violentCrime"
   | "lifeExpectancy";
 
-export type ValueFormat = "usd" | "usdPerDay" | "rate" | "years";
+export type ValueFormat = "usd" | "usdPerDay" | "rate" | "gini" | "years";
 
 export interface IndicatorMeta {
   id: IndicatorId;
