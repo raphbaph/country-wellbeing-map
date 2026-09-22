@@ -1,0 +1,1513 @@
+{
+  "sourceUrl": "https://rplumber.ilo.org/data/indicator?id=EAR_EMTA_SEX_CUR_NB_A&sex=SEX_T&classif1=CUR_TYPE_PPP&type=both&format=.csv",
+  "methodologyUrl": "https://ilostat.ilo.org/methods/concepts-and-definitions/description-wages-and-working-time-statistics/",
+  "retrieved": "2026-09-22",
+  "selection": "Latest eligible annual value from 2015 through the last complete calendar year. Total sex; 2021 PPP$. ILO default best source. Exclude explicitly labelled median, net, full-time-only, full-time-equivalent and unreliable observations. Unspecified coverage follows the ILO indicator definition; national coverage can still differ. No imputation or year extrapolation.",
+  "countries": {
+    "afg": {
+      "name": "Afghanistan",
+      "v": 836.263,
+      "y": 2020,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:15715",
+      "note": "Break in series | Currency: AFG - Afghani (AFN) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "ago": {
+      "name": "Angola",
+      "v": 359.487,
+      "y": 2024,
+      "source": "LFS - Employment Survey",
+      "sourceCode": "BA:13951",
+      "note": "Currency: AGO - Kwanza (AOA) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "alb": {
+      "name": "Albania",
+      "v": 1266.603,
+      "y": 2022,
+      "source": "ADM-IR - General Directorate of Taxation",
+      "sourceCode": "FA:13364",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: ALB - Lek (ALL) | Reference group coverage: Insured persons"
+    },
+    "arg": {
+      "name": "Argentina",
+      "v": 1522.602,
+      "y": 2025,
+      "source": "LFS - Permanent Household Survey, Urban",
+      "sourceCode": "BA:150",
+      "note": "Currency: ARG - Argentine peso (ARS) | Repository: ILO-STATISTICS - Micro data processing | Geographical coverage: Main cities or metropolitan areas"
+    },
+    "arm": {
+      "name": "Armenia",
+      "v": 983.062,
+      "y": 2023,
+      "source": "HIES - Households Living Conditions Survey",
+      "sourceCode": "BB:173",
+      "note": "Currency: ARM - Dram (AMD) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - maximum age: 75 years old"
+    },
+    "atg": {
+      "name": "Antigua and Barbuda",
+      "v": 1319.621,
+      "y": 2023,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:16714",
+      "note": "Currency: ATG - East Caribbean dollar (XCD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "aus": {
+      "name": "Australia",
+      "v": 3925.805,
+      "y": 2021,
+      "source": "HIES - Household, Income and Labour Dynamics Survey",
+      "sourceCode": "BB:15747",
+      "note": "Currency: AUS - Australian dollar (AUD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "aut": {
+      "name": "Austria",
+      "v": 7259.17,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:275",
+      "note": "Currency: AUT - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "aze": {
+      "name": "Azerbaijan",
+      "v": 1516.499,
+      "y": 2021,
+      "source": "ES - Labour-related Establishment Survey",
+      "sourceCode": "DA:126",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: AZE - Azerbaijani manat (AZN) | Reference group coverage: Employees"
+    },
+    "bdi": {
+      "name": "Burundi",
+      "v": 152.778,
+      "y": 2020,
+      "source": "HIES - Living Standards Survey",
+      "sourceCode": "BB:7040",
+      "note": "Currency: BDI - Burundian franc (BIF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "bel": {
+      "name": "Belgium",
+      "v": 8077.25,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:276",
+      "note": "Currency: BEL - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "ben": {
+      "name": "Benin",
+      "v": 411.27,
+      "y": 2022,
+      "source": "HIES - Monitoring Survey of the Modular and Integrated Survey of Household Living Conditions",
+      "sourceCode": "BB:426",
+      "note": "Currency: BEN - West African CFA franc (XOF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "bfa": {
+      "name": "Burkina Faso",
+      "v": 639.375,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:904",
+      "note": "Currency: BFA - West African CFA franc (XOF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "bgd": {
+      "name": "Bangladesh",
+      "v": 470.333,
+      "y": 2024,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:673",
+      "note": "Currency: BGD - Taka (BDT) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "bgr": {
+      "name": "Bulgaria",
+      "v": 3357.729,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3058",
+      "note": "Currency: BGR - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "bhr": {
+      "name": "Bahrain",
+      "v": 1780.188,
+      "y": 2020,
+      "source": "ADM-IR - Social Insurance organization Records",
+      "sourceCode": "FA:598",
+      "note": "Central tendency measure: Mean | Value type: Real values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: BHR - Bahraini dinar (BHD)"
+    },
+    "bhs": {
+      "name": "Bahamas",
+      "v": 2659.773,
+      "y": 2024,
+      "source": "LFS - Labour Force & Household Survey",
+      "sourceCode": "BA:17",
+      "note": "Currency: BHS - Bahamian dollar (BSD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "bih": {
+      "name": "Bosnia and Herzegovina",
+      "v": 2254.428,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:493",
+      "note": "Currency: BIH - Marka (BAM) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "blz": {
+      "name": "Belize",
+      "v": 994.237,
+      "y": 2019,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:934",
+      "note": "Currency: BLZ - Belize dollar (BZD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "bol": {
+      "name": "Bolivia, Plurinational State of",
+      "v": 1181.678,
+      "y": 2025,
+      "source": "LFS - Continuous Employment Survey",
+      "sourceCode": "BA:74",
+      "note": "Currency: BOL - Bolivian (BOB) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "bra": {
+      "name": "Brazil",
+      "v": 1314.417,
+      "y": 2025,
+      "source": "HS - Continuous National Household Sample Survey",
+      "sourceCode": "BX:6355",
+      "note": "Currency: BRA - Real (BRL) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "brb": {
+      "name": "Barbados",
+      "v": 1116.854,
+      "y": 2016,
+      "source": "HIES - Survey on Living Conditions",
+      "sourceCode": "BB:15690",
+      "note": "Currency: BRB - Barbadian dollar (BBD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "btn": {
+      "name": "Bhutan",
+      "v": 1333.472,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:625",
+      "note": "Currency: BTN - Ngultrum (BTN) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "bwa": {
+      "name": "Botswana",
+      "v": 1232.066,
+      "y": 2024,
+      "source": "HS - Multi-Topic Household Survey",
+      "sourceCode": "BX:15710",
+      "note": "Currency: BWA - Pula (BWP) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "can": {
+      "name": "Canada",
+      "v": 4571.222,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:147",
+      "note": "Currency: CAN - Canadian Dollar (CAD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "che": {
+      "name": "Switzerland",
+      "v": 6069.993,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:253",
+      "note": "Currency: CHE - Swiss franc (CHF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "chl": {
+      "name": "Chile",
+      "v": 2078.786,
+      "y": 2024,
+      "source": "HIES - Supplemental Income Survey",
+      "sourceCode": "BB:16207",
+      "note": "Currency: CHL - Chilean peso (CLP) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "civ": {
+      "name": "Côte d'Ivoire",
+      "v": 554.816,
+      "y": 2022,
+      "source": "HIES - Living Standards Measurement Survey",
+      "sourceCode": "BB:16197",
+      "note": "Currency: CIV - West African CFA franc (XOF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "cod": {
+      "name": "Congo, Democratic Republic of the",
+      "v": 297.621,
+      "y": 2016,
+      "source": "HS - Core Welfare Indicators Questionnaire",
+      "sourceCode": "BX:16939",
+      "note": "Currency: COD - Congolese franc (CDF) | Repository: ILO-STATISTICS - Micro data processing | Geographical coverage: Main cities or metropolitan areas"
+    },
+    "col": {
+      "name": "Colombia",
+      "v": 1214.377,
+      "y": 2025,
+      "source": "LFS - Integrated Household Survey",
+      "sourceCode": "BA:358",
+      "note": "Currency: COL - Colombian peso (COP) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "com": {
+      "name": "Comoros",
+      "v": 461.987,
+      "y": 2021,
+      "source": "LFS - National Survey on Employment and the Informal Sector",
+      "sourceCode": "BA:14125",
+      "note": "Currency: COM - Comorian franc (KMF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "cpv": {
+      "name": "Cape Verde",
+      "v": 639.102,
+      "y": 2015,
+      "source": "LFS - Continuous Multi-Objective Survey Employment and Labor Market Statistics",
+      "sourceCode": "BA:7395",
+      "note": "Break in series | Currency: CPV - Escudo (CVE) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "cri": {
+      "name": "Costa Rica",
+      "v": 1928.246,
+      "y": 2025,
+      "source": "LFS - Continuous Employment Survey",
+      "sourceCode": "BA:12883",
+      "note": "Currency: CRI - Colon (CRC) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "cyp": {
+      "name": "Cyprus",
+      "v": 4911.465,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:459",
+      "note": "Currency: CYP - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "cze": {
+      "name": "Czechia",
+      "v": 4055.251,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:301",
+      "note": "Currency: CZE - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "deu": {
+      "name": "Germany",
+      "v": 6134.911,
+      "y": 2022,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:5863",
+      "note": "Currency: DEU - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "dji": {
+      "name": "Djibouti",
+      "v": 969.763,
+      "y": 2017,
+      "source": "HS - Djiboutian Household Survey",
+      "sourceCode": "BX:15732",
+      "note": "Break in series | Currency: DJI - Djiboutian franc (DJF) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "dnk": {
+      "name": "Denmark",
+      "v": 6689.19,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3070",
+      "note": "Currency: DNK - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "dom": {
+      "name": "Dominican Republic",
+      "v": 1263.086,
+      "y": 2025,
+      "source": "LFS - Continuous National Labour Force Survey",
+      "sourceCode": "BA:13413",
+      "note": "Currency: DOM - Dominican peso (DOP) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "ecu": {
+      "name": "Ecuador",
+      "v": 1219.582,
+      "y": 2025,
+      "source": "LFS - National Survey on Employment, Unemployment and Underemployment",
+      "sourceCode": "BA:19",
+      "note": "Currency: ECU - United States dollar (USD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "egy": {
+      "name": "Egypt",
+      "v": 712.555,
+      "y": 2024,
+      "source": "LFS - Labour Force Sample Survey",
+      "sourceCode": "BA:582",
+      "note": "Break in series | Currency: EGY - Egyptian pound (EGP) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "esp": {
+      "name": "Spain",
+      "v": 5203.46,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3071",
+      "note": "Currency: ESP - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "est": {
+      "name": "Estonia",
+      "v": 4238.821,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:44",
+      "note": "Currency: EST - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "eth": {
+      "name": "Ethiopia",
+      "v": 312.275,
+      "y": 2021,
+      "source": "LFS - National Labor Force Survey",
+      "sourceCode": "BA:1126",
+      "note": "Currency: ETH - Birr (ETB) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "fin": {
+      "name": "Finland",
+      "v": 6355.763,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:6210",
+      "note": "Currency: FIN - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "fji": {
+      "name": "Fiji",
+      "v": 1502.934,
+      "y": 2024,
+      "source": "LFS - Employment, Unemployment Survey",
+      "sourceCode": "BA:1135",
+      "note": "Currency: FJI - Fijian dollar (FJD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "fra": {
+      "name": "France",
+      "v": 6069.098,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3067",
+      "note": "Currency: FRA - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "gbr": {
+      "name": "United Kingdom of Great Britain and Northern Ireland",
+      "v": 4499.877,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:666",
+      "note": "Currency: GBR - British pound (GBP) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "geo": {
+      "name": "Georgia",
+      "v": 791.899,
+      "y": 2023,
+      "source": "HIES - Household Income and Expenditure Survey",
+      "sourceCode": "BB:16121",
+      "note": "Currency: GEO - Lari (GEL) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "gha": {
+      "name": "Ghana",
+      "v": 519.717,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1163",
+      "note": "Currency: GHA - Cedi (GHS) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "gin": {
+      "name": "Guinea",
+      "v": 586.523,
+      "y": 2019,
+      "source": "LFS - National Survey on Employment and the Informal Sector",
+      "sourceCode": "BA:15631",
+      "note": "Currency: GIN - Guinean franc (GNF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "gmb": {
+      "name": "Gambia",
+      "v": 267.582,
+      "y": 2018,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:7014",
+      "note": "Break in series | Currency: GMB - Dalasi (GMD) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "gnb": {
+      "name": "Guinea-Bissau",
+      "v": 398.306,
+      "y": 2022,
+      "source": "HIES - Harmonized Survey on Household Living Conditions",
+      "sourceCode": "BB:15952",
+      "note": "Currency: GNB - West African CFA franc (XOF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "gnq": {
+      "name": "Equatorial Guinea",
+      "v": 854.153,
+      "y": 2023,
+      "source": "HIES - National Household Survey",
+      "sourceCode": "BB:16937",
+      "note": "Currency: GNQ - Central African CFA franc (XAF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "grc": {
+      "name": "Greece",
+      "v": 3333.599,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:319",
+      "note": "Currency: GRC - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "gtm": {
+      "name": "Guatemala",
+      "v": 1120.476,
+      "y": 2025,
+      "source": "LFS - Employment and Income Survey",
+      "sourceCode": "BA:660",
+      "note": "Currency: GTM - Quetzal (GTQ) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "gum": {
+      "name": "Guam",
+      "v": 1858.975,
+      "y": 2016,
+      "source": "ES - Current Employment Survey",
+      "sourceCode": "DA:1211",
+      "note": "Components of earnings/wages: Including overtime and/or irregular bonuses | Currency: GUM - United States dollar (USD) | Data reference period: December | Institutional sector coverage: Private sector only"
+    },
+    "guy": {
+      "name": "Guyana",
+      "v": 1404.86,
+      "y": 2024,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1214",
+      "note": "Currency: GUY - Guyanese dollar (GYD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "hnd": {
+      "name": "Honduras",
+      "v": 891.501,
+      "y": 2025,
+      "source": "HS - Continuous Multi-Purpose Household Survey",
+      "sourceCode": "BX:504",
+      "note": "Currency: HND - Lempira (HNL) | Repository: ILO-STATISTICS - Micro data processing | Data reference period: Second quarter"
+    },
+    "hrv": {
+      "name": "Croatia",
+      "v": 4237.475,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:5862",
+      "note": "Currency: HRV - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "hun": {
+      "name": "Hungary",
+      "v": 2227.732,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3062",
+      "note": "Currency: HUN - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "idn": {
+      "name": "Indonesia",
+      "v": 540.14,
+      "y": 2023,
+      "source": "LFS - National Labour Force Survey",
+      "sourceCode": "BA:510",
+      "note": "Currency: IDN - Indonesian rupiah (IDR) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "ind": {
+      "name": "India",
+      "v": 1120.02,
+      "y": 2025,
+      "source": "LFS - Periodic Labour Force Survey",
+      "sourceCode": "BA:14121",
+      "note": "Currency: IND - Indian rupee (INR) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "irl": {
+      "name": "Ireland",
+      "v": 5576.847,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3073",
+      "note": "Currency: IRL - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "isl": {
+      "name": "Iceland",
+      "v": 5551.63,
+      "y": 2020,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3061",
+      "note": "Currency: ISL - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "isr": {
+      "name": "Israel",
+      "v": 2699.581,
+      "y": 2021,
+      "source": "HIES - Income Survey",
+      "sourceCode": "BB:711",
+      "note": "Employment definition: Including subsistence workers | Central tendency measure: Weighted mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: ISR - New Shekel (ILS)"
+    },
+    "ita": {
+      "name": "Italy",
+      "v": 5481.102,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3069",
+      "note": "Currency: ITA - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "jor": {
+      "name": "Jordan",
+      "v": 1093.779,
+      "y": 2024,
+      "source": "LFS - Employment and Unemployment Survey",
+      "sourceCode": "BA:682",
+      "note": "Currency: JOR - Jordanian dinar (JOD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "kaz": {
+      "name": "Kazakhstan",
+      "v": 2043.695,
+      "y": 2022,
+      "source": "ADM-EBR - Businesses and Organizations register",
+      "sourceCode": "FK:613",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: KAZ - Tenge (KZT) | Institutional sector coverage: Public sector only | Reference group coverage: Wage earners / blue collar / production workers"
+    },
+    "ken": {
+      "name": "Kenya",
+      "v": 322.059,
+      "y": 2019,
+      "source": "HS - Continuous household survey",
+      "sourceCode": "BX:3465",
+      "note": "Currency: KEN - Kenyan shilling (KES) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "kgz": {
+      "name": "Kyrgyzstan",
+      "v": 1079.341,
+      "y": 2022,
+      "source": "ES - Survey of enterprises, institutions and organisations",
+      "sourceCode": "DA:1316",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: KGZ - Kyrgyzstani som (KGS) | Data reference period: November | Reference group coverage: Employees"
+    },
+    "khm": {
+      "name": "Cambodia",
+      "v": 788.047,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1321",
+      "note": "Currency: KHM - Riel (KHR) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "kir": {
+      "name": "Kiribati",
+      "v": 573.477,
+      "y": 2023,
+      "source": "HIES - Household Income and Expenditure Survey",
+      "sourceCode": "BB:15723",
+      "note": "Currency: KIR - Australian dollar (AUD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "kor": {
+      "name": "Republic of Korea",
+      "v": 4525.448,
+      "y": 2022,
+      "source": "ES - Survey on labor conditions by employment type",
+      "sourceCode": "DA:224",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: KOR - South Korean won (KRW) | Data reference period: June | Institutional sector coverage: Private sector only | Economic activity coverage: Excluding public administration | Reference group coverage: Employees | Establishment size coverage: All establishments with at least 5 employees"
+    },
+    "kwt": {
+      "name": "Kuwait",
+      "v": 1828.093,
+      "y": 2016,
+      "source": "ES - Annual Survey of Establishments",
+      "sourceCode": "DA:1335",
+      "note": "Working time concept: Hours actually worked | Currency: KWT - Kuwaiti dinar (KWD) | Reference group coverage: Employees"
+    },
+    "lao": {
+      "name": "Lao People's Democratic Republic",
+      "v": 674.632,
+      "y": 2022,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:6651",
+      "note": "Break in series | Currency: LAO - Kip (LAK) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "lbn": {
+      "name": "Lebanon",
+      "v": 1571.45,
+      "y": 2019,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:14074",
+      "note": "Break in series | Currency: LBN - Lebanese pound (LBP) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "lbr": {
+      "name": "Liberia",
+      "v": 3246.188,
+      "y": 2017,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:16",
+      "note": "Break in series | Currency: LBR - United States dollar (USD) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "lca": {
+      "name": "Saint Lucia",
+      "v": 1068.627,
+      "y": 2016,
+      "source": "HIES - Survey on Living Conditions",
+      "sourceCode": "BB:16927",
+      "note": "Currency: LCA - East Caribbean dollar (XCD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "lka": {
+      "name": "Sri Lanka",
+      "v": 558.273,
+      "y": 2024,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1359",
+      "note": "Currency: LKA - Sri Lankan rupee (LKR) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "lso": {
+      "name": "Lesotho",
+      "v": 406.295,
+      "y": 2024,
+      "source": "LFS - Integrated Labour Force Survey",
+      "sourceCode": "BA:13",
+      "note": "Currency: LSO - Loti (LSL) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "ltu": {
+      "name": "Lithuania",
+      "v": 4241.14,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3065",
+      "note": "Currency: LTU - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "lux": {
+      "name": "Luxembourg",
+      "v": 9274.942,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:6341",
+      "note": "Currency: LUX - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "lva": {
+      "name": "Latvia",
+      "v": 4206.382,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3074",
+      "note": "Currency: LVA - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "mda": {
+      "name": "Republic of Moldova",
+      "v": 992.705,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:571",
+      "note": "Currency: MDA - Moldovan leu (MDL) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "mdg": {
+      "name": "Madagascar",
+      "v": 248.475,
+      "y": 2015,
+      "source": "LFS - National Survey on Employment and the Informal Sector",
+      "sourceCode": "BA:7423",
+      "note": "Currency: MDG - Malagasy ariary (MGA) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "mdv": {
+      "name": "Maldives",
+      "v": 1140.515,
+      "y": 2019,
+      "source": "HIES - Household Income and Expenditure Survey",
+      "sourceCode": "BB:704",
+      "note": "Currency: MDV - Rufiyaa (MVR) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "mex": {
+      "name": "Mexico",
+      "v": 938.113,
+      "y": 2025,
+      "source": "LFS - National Occupation and Employment Survey",
+      "sourceCode": "BA:463",
+      "note": "Currency: MEX - New Peso (MXN) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "mhl": {
+      "name": "Marshall Islands",
+      "v": 803.603,
+      "y": 2019,
+      "source": "HIES - Household Income and Expenditure Survey",
+      "sourceCode": "BB:14101",
+      "note": "Currency: MHL - United States dollar (USD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "mli": {
+      "name": "Mali",
+      "v": 554.734,
+      "y": 2024,
+      "source": "LFS - Continuous Household Employment Survey",
+      "sourceCode": "BA:219",
+      "note": "Currency: MLI - West African CFA franc (XOF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "mlt": {
+      "name": "Malta",
+      "v": 3583.252,
+      "y": 2020,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:342",
+      "note": "Currency: MLT - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "mmr": {
+      "name": "Myanmar",
+      "v": 431.386,
+      "y": 2020,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:7009",
+      "note": "Currency: MMR - Kyat (MMK) | Repository: ILO-STATISTICS - Micro data processing | Data reference period: First semester"
+    },
+    "mne": {
+      "name": "Montenegro",
+      "v": 2167.115,
+      "y": 2022,
+      "source": "ES - Survey on employees and wages",
+      "sourceCode": "DA:470",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: MNE - Euro (EUR) | Reference group coverage: Employees"
+    },
+    "mng": {
+      "name": "Mongolia",
+      "v": 1683.441,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:702",
+      "note": "Currency: MNG - Tögrög (MNT) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "moz": {
+      "name": "Mozambique",
+      "v": 562.634,
+      "y": 2022,
+      "source": "HIES - Household Budget Survey",
+      "sourceCode": "BB:8363",
+      "note": "Currency: MOZ - Metical (MZN) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "mus": {
+      "name": "Mauritius",
+      "v": 1629.021,
+      "y": 2024,
+      "source": "LFS - Continuous Multi-Purpose Household Survey",
+      "sourceCode": "BA:82",
+      "note": "Currency: MUS - Mauritian rupee (MUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "nam": {
+      "name": "Namibia",
+      "v": 1008.173,
+      "y": 2018,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1468",
+      "note": "Currency: NAM - Namibian dollar (NAD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "ncl": {
+      "name": "New Caledonia",
+      "v": 1743.729,
+      "y": 2017,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:15961",
+      "note": "Currency: NCL - CFP franc (XPF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "ner": {
+      "name": "Niger",
+      "v": 369.316,
+      "y": 2022,
+      "source": "HIES - National Survey on Household Living Conditions",
+      "sourceCode": "BB:13367",
+      "note": "Currency: NER - West African CFA franc (XOF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "nga": {
+      "name": "Nigeria",
+      "v": 288.05,
+      "y": 2024,
+      "source": "HS - General Household Survey",
+      "sourceCode": "BX:7338",
+      "note": "Currency: NGA - Naira (NGN) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "nld": {
+      "name": "Netherlands",
+      "v": 7383.402,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3060",
+      "note": "Currency: NLD - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "nor": {
+      "name": "Norway",
+      "v": 6693.801,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3054",
+      "note": "Currency: NOR - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "npl": {
+      "name": "Nepal",
+      "v": 586.489,
+      "y": 2017,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1510",
+      "note": "Break in series | Currency: NPL - Nepalese rupee (NPR) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "nzl": {
+      "name": "New Zealand",
+      "v": 4064.155,
+      "y": 2022,
+      "source": "ADM - Linked employer-employee data",
+      "sourceCode": "FX:118",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Job coverage: Main job currently held | Working time arrangement coverage: Full-time and part time workers | Currency: NZL - New Zealand dollar (NZD) | Data reference period: End of the year | Geographical coverage: Total national, excluding overseas territories | Reference group coverage: Employees"
+    },
+    "pak": {
+      "name": "Pakistan",
+      "v": 407.188,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:538",
+      "note": "Currency: PAK - Pakistani rupee (PKR) | Repository: ILO-STATISTICS - Micro data processing | Data reference period: Noncalendar year"
+    },
+    "pan": {
+      "name": "Panama",
+      "v": 1869.462,
+      "y": 2025,
+      "source": "LFS - Labour Market Survey",
+      "sourceCode": "BA:511",
+      "note": "Currency: PAN - Balboa (PAB) | Repository: ILO-STATISTICS - Micro data processing | Data reference period: October"
+    },
+    "per": {
+      "name": "Peru",
+      "v": 1042.024,
+      "y": 2025,
+      "source": "LFS - Permanent Employment Survey, National",
+      "sourceCode": "BA:16208",
+      "note": "Currency: PER - Nuevo sol (PEN) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "phl": {
+      "name": "Philippines",
+      "v": 893.062,
+      "y": 2024,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:629",
+      "note": "Currency: PHL - Philippine peso (PHP) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "plw": {
+      "name": "Palau",
+      "v": 1041.905,
+      "y": 2023,
+      "source": "HIES - Household Income and Expenditure Survey",
+      "sourceCode": "BB:14046",
+      "note": "Currency: PLW - United States dollar (USD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "pol": {
+      "name": "Poland",
+      "v": 4195.725,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:13355",
+      "note": "Currency: POL - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "pri": {
+      "name": "Puerto Rico",
+      "v": 2381.447,
+      "y": 2020,
+      "source": "PC - Population Census",
+      "sourceCode": "AA:1553",
+      "note": "Currency: PRI - United States dollar (USD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "prt": {
+      "name": "Portugal",
+      "v": 2196.151,
+      "y": 2025,
+      "source": "LFS - Employment Survey",
+      "sourceCode": "BA:199",
+      "note": "Currency: PRT - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "pry": {
+      "name": "Paraguay",
+      "v": 1125.674,
+      "y": 2025,
+      "source": "HS - Continuous Permanent Household Survey",
+      "sourceCode": "BX:14043",
+      "note": "Currency: PRY - Guarani (PYG) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "qat": {
+      "name": "Qatar",
+      "v": 4225.924,
+      "y": 2022,
+      "source": "LFS - Labor Force Sample Survey",
+      "sourceCode": "BA:696",
+      "note": "Employment definition: Excluding own-use production workers | Central tendency measure: Mean | Value type: Real values | Working time arrangement coverage: Full-time and part time workers | Currency: QAT - Qatari riyal (QAR)"
+    },
+    "rou": {
+      "name": "Romania",
+      "v": 3531.252,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:439",
+      "note": "Currency: ROU - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "rus": {
+      "name": "Russian Federation",
+      "v": 2222.435,
+      "y": 2021,
+      "source": "ES - Establishments sample Survey on employees' wages by Occupation",
+      "sourceCode": "DA:122",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: RUS - Russian ruble (RUB) | Data reference period: October | Geographical coverage: Total national, excluding some areas"
+    },
+    "rwa": {
+      "name": "Rwanda",
+      "v": 193.281,
+      "y": 2024,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1590",
+      "note": "Currency: RWA - Rwandan franc (RWF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "sdn": {
+      "name": "Sudan",
+      "v": 692.78,
+      "y": 2022,
+      "source": "LFS - Labor Market Panel Survey",
+      "sourceCode": "BA:1603",
+      "note": "Break in series | Currency: SDN - Sudanese pound (SDG) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "sen": {
+      "name": "Senegal",
+      "v": 738.289,
+      "y": 2024,
+      "source": "LFS - National Employment Survey",
+      "sourceCode": "BA:13368",
+      "note": "Currency: SEN - West African CFA franc (XOF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "slv": {
+      "name": "El Salvador",
+      "v": 1081.453,
+      "y": 2025,
+      "source": "HS - Multi-purpose Household Survey",
+      "sourceCode": "BX:461",
+      "note": "Currency: SLV - United States dollar (USD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "smr": {
+      "name": "San Marino",
+      "v": 2979.155,
+      "y": 2022,
+      "source": "OE - Estimates of the Office of economic planning, data processing and statistics",
+      "sourceCode": "EA:5918",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Currency: SMR - Euro (EUR) | Data reference period: End of the year"
+    },
+    "srb": {
+      "name": "Serbia",
+      "v": 3062.461,
+      "y": 2025,
+      "source": "HIES - Survey on Income and living Conditions",
+      "sourceCode": "BB:6644",
+      "note": "Currency: SRB - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "sur": {
+      "name": "Suriname",
+      "v": 884.836,
+      "y": 2016,
+      "source": "HIES - Survey on Living Conditions",
+      "sourceCode": "BB:15691",
+      "note": "Currency: SUR - Surinamese dollar (SRD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "svk": {
+      "name": "Slovakia",
+      "v": 3904.527,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:560",
+      "note": "Currency: SVK - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "svn": {
+      "name": "Slovenia",
+      "v": 5515.15,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:445",
+      "note": "Currency: SVN - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "swe": {
+      "name": "Sweden",
+      "v": 5284.045,
+      "y": 2025,
+      "source": "HIES - EU Statistics on Income and Living Conditions",
+      "sourceCode": "BB:3063",
+      "note": "Currency: SWE - Euro (EUR) | Repository: ILO-STATISTICS - Micro data processing | Age coverage - minimum age: 16 years old"
+    },
+    "swz": {
+      "name": "Eswatini",
+      "v": 902.724,
+      "y": 2021,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1672",
+      "note": "Currency: SWZ - Lilangeni (SZL) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "syc": {
+      "name": "Seychelles",
+      "v": 1602.598,
+      "y": 2022,
+      "source": "ADM-IR - Records of the Treasury Department and Seychelles Revenue Commission",
+      "sourceCode": "FA:5920",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Job coverage: Main job currently held | Working time arrangement coverage: Full-time and part time workers | Currency: SYC - Seychellois rupee (SCR) | Data reference period: Fourth quarter | Reference group coverage: Employees"
+    },
+    "tcd": {
+      "name": "Chad",
+      "v": 607.596,
+      "y": 2022,
+      "source": "HIES - Modular and Integrated Household Survey on Living Conditions",
+      "sourceCode": "BB:15712",
+      "note": "Currency: TCD - Central African CFA franc (XAF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "tgo": {
+      "name": "Togo",
+      "v": 389.256,
+      "y": 2022,
+      "source": "HIES - Living Standards Measurement Survey",
+      "sourceCode": "BB:16196",
+      "note": "Currency: TGO - West African CFA franc (XOF) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "tha": {
+      "name": "Thailand",
+      "v": 1574.402,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:741",
+      "note": "Currency: THA - Baht (THB) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "tjk": {
+      "name": "Tajikistan",
+      "v": 459.982,
+      "y": 2019,
+      "source": "EC - Labour reports",
+      "sourceCode": "CA:1705",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Working time arrangement coverage: Full-time and part time workers | Working time concept: Hours actually worked | Currency: TJK - Somoni (TJS) | Reference group coverage: Employees"
+    },
+    "tls": {
+      "name": "Timor-Leste",
+      "v": 578.152,
+      "y": 2021,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:3050",
+      "note": "Currency: TLS - United States dollar (USD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "ton": {
+      "name": "Tonga",
+      "v": 860.168,
+      "y": 2023,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1712",
+      "note": "Currency: TON - Pa'anga (TOP) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "tto": {
+      "name": "Trinidad and Tobago",
+      "v": 1276.482,
+      "y": 2016,
+      "source": "LFS - Continuous Sample Survey of the Population",
+      "sourceCode": "BA:549",
+      "note": "Currency: TTO - Trinidad and Tobago dollar (TTD) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "tun": {
+      "name": "Tunisia",
+      "v": 901.806,
+      "y": 2019,
+      "source": "LFS - National Population and Employment Survey",
+      "sourceCode": "BA:743",
+      "note": "Currency: TUN - Tunisian dinar (TND) | Repository: ILO-STATISTICS - Micro data processing | Data reference period: Second quarter"
+    },
+    "tur": {
+      "name": "Türkiye",
+      "v": 2225.313,
+      "y": 2025,
+      "source": "LFS - Household Labour Force Survey",
+      "sourceCode": "BA:622",
+      "note": "Currency: TUR - Turkish lira (TRY) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "tza": {
+      "name": "Tanzania, United Republic of",
+      "v": 913.041,
+      "y": 2025,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1743",
+      "note": "Currency: TZA - Tanzanian shilling (TZS) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "uga": {
+      "name": "Uganda",
+      "v": 439.209,
+      "y": 2021,
+      "source": "LFS - National Labour Force Survey",
+      "sourceCode": "BA:13047",
+      "note": "Currency: UGA - Ugandan shilling (UGX) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "ukr": {
+      "name": "Ukraine",
+      "v": 1540.192,
+      "y": 2022,
+      "source": "ES - Survey of enterprises on matters pertaining to labor statistics",
+      "sourceCode": "DA:5913",
+      "note": "Central tendency measure: Mean | Value type: Nominal values | Accounting concept: Gross | Job coverage: Main job currently held | Working time arrangement coverage: Full-time and part time workers | Currency: UKR - Hryvnia (UAH) | Geographical coverage: Total national, excluding some areas | Economic activity coverage: Excluding activities of households as employers and of extraterritorial organizations and bodies | Reference group coverage: Employees | Establishment size coverage: All establishments with at least 10 employees"
+    },
+    "ury": {
+      "name": "Uruguay",
+      "v": 1636.238,
+      "y": 2024,
+      "source": "LFS - Continuous Household Survey Implantation",
+      "sourceCode": "BA:16753",
+      "note": "Currency: URY - Uruguayan peso (UYU) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "usa": {
+      "name": "United States of America",
+      "v": 6272.925,
+      "y": 2025,
+      "source": "LFS - Current Population Survey",
+      "sourceCode": "BA:453",
+      "note": "Break in series | Currency: USA - United States dollar (USD) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing | Repository: Annual estimates for 2025 are 11-month averages that exclude October. Data for October 2025 were not collected due to the federal government shutdown | Age coverage - minimum age: 16 years old"
+    },
+    "vnm": {
+      "name": "Viet Nam",
+      "v": 1198.144,
+      "y": 2024,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1788",
+      "note": "Currency: VNM - Dông (VND) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "wsm": {
+      "name": "Samoa",
+      "v": 896.934,
+      "y": 2022,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:1794",
+      "note": "Break in series | Currency: WSM - Tala (WST) | Break in series: Methodology revised | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "zaf": {
+      "name": "South Africa",
+      "v": 1076.012,
+      "y": 2020,
+      "source": "HIES - National Income Dynamic Survey",
+      "sourceCode": "BB:16198",
+      "note": "Currency: ZAF - Rand (ZAR) | Repository: ILO-STATISTICS - Micro data processing"
+    },
+    "zmb": {
+      "name": "Zambia",
+      "v": 589.198,
+      "y": 2024,
+      "source": "LFS - Labour Force Survey",
+      "sourceCode": "BA:2212",
+      "note": "Currency: ZMB - Zambian kwacha (ZMW) | Repository: ILO-STATISTICS - Micro data processing"
+    }
+  },
+  "excludedObservations": [
+    {
+      "id": "alb",
+      "y": 2017,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "alb",
+      "y": 2016,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "alb",
+      "y": 2015,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "aze",
+      "y": 2022,
+      "reason": "Unreliable observation"
+    },
+    {
+      "id": "blz",
+      "y": 2020,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "chn",
+      "y": 2022,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "chn",
+      "y": 2021,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "chn",
+      "y": 2020,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "chn",
+      "y": 2019,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "chn",
+      "y": 2018,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "chn",
+      "y": 2017,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "chn",
+      "y": 2016,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "chn",
+      "y": 2015,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "cuw",
+      "y": 2018,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "hkg",
+      "y": 2016,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "hkg",
+      "y": 2015,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "jpn",
+      "y": 2021,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "jpn",
+      "y": 2020,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "jpn",
+      "y": 2019,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "jpn",
+      "y": 2018,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "jpn",
+      "y": 2017,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "jpn",
+      "y": 2016,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "jpn",
+      "y": 2015,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "kos",
+      "y": 2019,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "kos",
+      "y": 2018,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "kos",
+      "y": 2017,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "kos",
+      "y": 2016,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "kos",
+      "y": 2015,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "lux",
+      "y": 2018,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "mac",
+      "y": 2018,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "mac",
+      "y": 2017,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "mac",
+      "y": 2016,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "mac",
+      "y": 2015,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "mlt",
+      "y": 2021,
+      "reason": "Unreliable observation"
+    },
+    {
+      "id": "mys",
+      "y": 2020,
+      "reason": "Working time arrangement coverage: Full-time equivalents"
+    },
+    {
+      "id": "mys",
+      "y": 2019,
+      "reason": "Working time arrangement coverage: Full-time equivalents"
+    },
+    {
+      "id": "mys",
+      "y": 2018,
+      "reason": "Working time arrangement coverage: Full-time equivalents"
+    },
+    {
+      "id": "mys",
+      "y": 2017,
+      "reason": "Working time arrangement coverage: Full-time equivalents"
+    },
+    {
+      "id": "mys",
+      "y": 2016,
+      "reason": "Working time arrangement coverage: Full-time equivalents"
+    },
+    {
+      "id": "mys",
+      "y": 2015,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "pry",
+      "y": 2020,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "sau",
+      "y": 2022,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "sau",
+      "y": 2020,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "sau",
+      "y": 2019,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "sau",
+      "y": 2018,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "sau",
+      "y": 2017,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "sau",
+      "y": 2016,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "sau",
+      "y": 2015,
+      "reason": "Accounting concept: Net"
+    },
+    {
+      "id": "sgp",
+      "y": 2021,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "sgp",
+      "y": 2020,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "sgp",
+      "y": 2019,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "sgp",
+      "y": 2018,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "sgp",
+      "y": 2017,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "sgp",
+      "y": 2016,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "sgp",
+      "y": 2015,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "uzb",
+      "y": 2022,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "uzb",
+      "y": 2021,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "uzb",
+      "y": 2020,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "uzb",
+      "y": 2019,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "uzb",
+      "y": 2018,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "uzb",
+      "y": 2017,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "uzb",
+      "y": 2016,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "uzb",
+      "y": 2015,
+      "reason": "Working time arrangement coverage: Full-time workers"
+    },
+    {
+      "id": "zaf",
+      "y": 2019,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "zaf",
+      "y": 2018,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "zaf",
+      "y": 2017,
+      "reason": "Central tendency measure: Median"
+    },
+    {
+      "id": "zaf",
+      "y": 2016,
+      "reason": "Central tendency measure: Median"
+    }
+  ]
+}

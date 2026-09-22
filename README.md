@@ -70,7 +70,36 @@ Violent crime and income inequality then become `1 − percentile`. Every other 
 
 The composite is the **unweighted mean** of the percentiles the country actually has among the enabled indicators, shown on a 0–100 scale. A missing indicator is dropped from that country’s average. It is not treated as zero, and no number is invented.
 
-A country is drawn in gray and left off the ranking when it has values for fewer than half of the enabled indicators, rounded up (`ceil(enabled / 2)`). With one toggle on, that single series is enough. With all eight on, a country needs at least four. That keeps a territory that only reports wealth from outranking countries measured on the full set.
+A country is drawn in gray and left off the ranking when it has values for fewer than half of the enabled indicators, rounded up (`ceil(enabled / 2)`). With one toggle on, that single series is enough. With all nine on, a country needs at least five. That keeps a territory that only reports wealth from outranking countries measured on the full set.
+
+### Average wages
+
+The ninth indicator is mean monthly employee earnings in **2021 PPP dollars**, from
+[ILOSTAT](https://ilostat.ilo.org/methods/concepts-and-definitions/description-wages-and-working-time-statistics/),
+series `EAR_EMTA_SEX_CUR_NB_A`, total sex (`SEX_T`), currency `CUR_TYPE_PPP`.
+It covers **146 countries/territories** in the 2026-09-22 snapshot. For each country,
+the latest eligible annual observation from 2015 through the last complete calendar year is used
+(currently 2015–2025), using the API's default best-source feed. Conflicting same-year observations fail the import.
+
+Earnings are generally gross employee remuneration, distinct from the app's GDP-per-capita
+"Average income" proxy. PPP dollars represent purchasing power, not exchange-rate US dollars
+or take-home pay. Explicitly labelled median, net, full-time-only, full-time-equivalent and unreliable
+observations are excluded. Where coverage is unspecified, the ILO indicator definition applies;
+national survey coverage, hours and reference periods can still differ. Source labels, years and
+national notes are retained in the snapshot and country details. Break-in-series flags are retained.
+Missing values remain missing; old observations are not extrapolated and no cross-country estimates are made.
+
+Refresh only wages (leaves existing indicators untouched):
+
+```sh
+python3 scripts/prepare_wages.py
+python3 -m unittest discover -s test -p 'test_*.py'
+npm test
+```
+
+`--input path/to/ilo.csv` accepts an offline copy of the API CSV with codes and labels.
+The raw endpoint, retrieval date, filters and excluded observations are recorded in
+`data/ilo-wages.json`. The full `prepare_data.py` rebuild also applies this checked-in snapshot.
 
 If every toggle is off, the map is a single neutral color and the ranking is empty.
 

@@ -71,6 +71,16 @@ export function CountryDetail({
             : `Only ${presentCount(country, indicators, enabled)} of ${enabled.size} enabled indicators have a value. At least ${minimumCoverage(enabled.size)} are required, so this country stays gray.`}
         </p>
       )}
+      {enabled.has("avgWages") ? (
+        country.values.avgWages ? (
+          <details className="wage-notes">
+            <summary>Wage source & coverage · {country.values.avgWages.y}</summary>
+            <p>{formatValue("pppPerMonth", country.values.avgWages.v)} · 2021 purchasing power parity</p>
+            <p>ILOSTAT · {country.values.avgWages.source}</p>
+            <p>{country.values.avgWages.note || "No additional national coverage notes supplied."}</p>
+          </details>
+        ) : <p className="wage-notes">Average wages: no eligible PPP observation since 2015. Left out of the score and wage correlations.</p>
+      ) : null}
     </section>
   );
 }

@@ -325,6 +325,9 @@ h1 {
 .correlation-point.active, .correlation-point:hover, .correlation-point:focus { opacity: 1; stroke: var(--text); stroke-width: 2; }
 .correlation-note { color: var(--muted); margin-bottom: 0; }
 .correlation-country { overflow-wrap: anywhere; }
+.wage-notes { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 10px 0; overflow-wrap: anywhere; }
+.wage-notes summary { cursor: pointer; }
+.wage-notes a { color: var(--accent); }
 
 button:focus-visible, input:focus-visible, .toggle:focus-within {
   outline: 2px solid var(--accent);

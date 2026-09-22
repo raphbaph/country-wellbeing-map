@@ -23,6 +23,7 @@ import argparse
 import csv
 import json
 import urllib.request
+from prepare_wages import apply_wages
 from collections import defaultdict
 from pathlib import Path
 
@@ -414,6 +415,7 @@ def main() -> None:
         "countries": countries,
     }
 
+    apply_wages(metrics)
     out_metrics = ROOT / "public" / "data" / "metrics.json"
     out_geo = ROOT / "public" / "data" / "world.geojson"
     out_metrics.write_text(json.dumps(metrics, separators=(",", ":")))
