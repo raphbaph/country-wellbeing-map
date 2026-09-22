@@ -188,6 +188,7 @@ def main() -> None:
         cid = "kos" if code == "xkx" else code
         values[cid]["medIncome"] = {"v": obs[1], "y": obs[0]}
 
+    wid_wealth: dict[str, dict] = defaultdict(dict)
     for alpha2, series in wid.items():
         meta = iso.get(alpha2)
         if not meta:
@@ -195,8 +196,26 @@ def main() -> None:
         cid = meta["iso3"]
         mean_years = {int(y): v for y, v in series.get("mean", {}).items()}
         median_years = {int(y): v for y, v in series.get("median", {}).items()}
-        put(cid, "avgWealth", pick_year(mean_years))
-        put(cid, "medWealth", pick_year(median_years))
+        mean = pick_year(mean_years)
+        median = pick_year(median_years)
+        if mean:
+            wid_wealth[cid]["avgWealth"] = {"v": mean[1], "y": mean[0]}
+        if median:
+            wid_wealth[cid]["medWealth"] = {"v": median[1], "y": median[0]}
+
+    ubs_path = ROOT / "data" / "ubs-wealth.json"
+    ubs = json.loads(ubs_path.read_text())
+    ubs_year = int(ubs["dataYear"])
+    ubs_wealth: dict[str, dict] = {}
+    for cid, row in ubs["countries"].items():
+        entry = {}
+        if "mean" in row:
+            entry["avgWealth"] = {"v": row["mean"], "y": ubs_year}
+        if "median" in row:
+            entry["medWealth"] = {"v": row["median"], "y": ubs_year}
+        if entry:
+            ubs_wealth[cid] = entry
+            names.setdefault(cid, row.get("name", cid.upper()))
 
     # Shapes. Drop Antarctica so the fitted projection is the inhabited world.
     rings_by_id: dict[str, list] = defaultdict(list)
@@ -227,10 +246,18 @@ def main() -> None:
     features.sort(key=lambda f: f["id"])
 
     countries = []
-    for cid in sorted(values):
-        if not values[cid]:
+    for cid in sorted(set(values) | set(wid_wealth) | set(ubs_wealth)):
+        wealth = {}
+        if cid in wid_wealth:
+            wealth["wid"] = wid_wealth[cid]
+        if cid in ubs_wealth:
+            wealth["ubs"] = ubs_wealth[cid]
+        if not values.get(cid) and not wealth:
             continue
-        countries.append({"id": cid, "name": names.get(cid, cid.upper()), "values": values[cid]})
+        entry = {"id": cid, "name": names.get(cid, cid.upper()), "values": values.get(cid, {})}
+        if wealth:
+            entry["wealth"] = wealth
+        countries.append(entry)
 
     metrics = {
         "anchorYear": ANCHOR,
@@ -238,22 +265,22 @@ def main() -> None:
             {
                 "id": "avgWealth",
                 "label": "Average wealth",
-                "detail": "Mean net personal wealth per adult",
-                "unit": "2023 USD PPP",
+                "detail": "Mean wealth per adult · UBS GWR, market USD",
+                "unit": "market USD per adult",
                 "higherIsBetter": True,
                 "format": "usd",
-                "source": "WID.world ahweal (equal-split adults), local currency ÷ xlcusp",
-                "yearNote": "2023, or latest year in 2018–2023",
+                "source": "UBS Global Wealth Report 2026, top 30 by average wealth",
+                "yearNote": "End of 2025",
             },
             {
                 "id": "medWealth",
                 "label": "Median wealth",
-                "detail": "Median net personal wealth per adult",
-                "unit": "2023 USD PPP",
+                "detail": "Median wealth per adult · UBS GWR, market USD",
+                "unit": "market USD per adult",
                 "higherIsBetter": True,
                 "format": "usd",
-                "source": "WID.world thweal at the 50th percentile (p50p51), same PPP conversion",
-                "yearNote": "2023, or latest year in 2018–2023",
+                "source": "UBS Global Wealth Report 2026, top 30 by median wealth",
+                "yearNote": "End of 2025",
             },
             {
                 "id": "avgIncome",
@@ -296,6 +323,43 @@ def main() -> None:
                 "yearNote": "2023, or latest year in 2018–2023",
             },
         ],
+        "wealthSources": {
+            "default": "ubs",
+            "options": [
+                {
+                    "id": "ubs",
+                    "label": "UBS GWR (market USD)",
+                    "avgWealth": {
+                        "detail": "Mean wealth per adult · UBS GWR, market USD",
+                        "unit": "market USD per adult",
+                        "source": "UBS Global Wealth Report 2026, top 30 by average wealth",
+                        "yearNote": "End of 2025",
+                    },
+                    "medWealth": {
+                        "detail": "Median wealth per adult · UBS GWR, market USD",
+                        "unit": "market USD per adult",
+                        "source": "UBS Global Wealth Report 2026, top 30 by median wealth",
+                        "yearNote": "End of 2025",
+                    },
+                },
+                {
+                    "id": "wid",
+                    "label": "WID (PPP)",
+                    "avgWealth": {
+                        "detail": "Mean net personal wealth per adult · WID, USD PPP",
+                        "unit": "2023 USD PPP",
+                        "source": "WID.world ahweal (equal-split adults), local currency ÷ xlcusp",
+                        "yearNote": "2023, or latest year in 2018–2023",
+                    },
+                    "medWealth": {
+                        "detail": "Median net personal wealth per adult · WID, USD PPP",
+                        "unit": "2023 USD PPP",
+                        "source": "WID.world thweal at the 50th percentile (p50p51), same PPP conversion",
+                        "yearNote": "2023, or latest year in 2018–2023",
+                    },
+                },
+            ],
+        },
         "countries": countries,
     }
 
@@ -311,10 +375,18 @@ def main() -> None:
     print(f"shaped but no data: {len(shaped - scored)}")
     print(f"data but no shape: {sorted(scored - shaped)[:30]} ({len(scored - shaped)})")
     counts = {ind["id"]: 0 for ind in metrics["indicators"]}
-    for c in countries:
-        for key in c["values"]:
+    wealth_counts = {"ubs": {"avgWealth": 0, "medWealth": 0}, "wid": {"avgWealth": 0, "medWealth": 0}}
+    for country in countries:
+        for key in country["values"]:
             counts[key] += 1
+        for source, fields in country.get("wealth", {}).items():
+            for key in fields:
+                wealth_counts[source][key] += 1
     print("coverage", counts)
+    print("wealth", wealth_counts)
+    for cid in ("che", "usa", "lux", "aus", "deu"):
+        row = next(country for country in countries if country["id"] == cid)
+        print(cid, row["name"], row.get("wealth", {}).get("ubs"))
     print(f"wrote {out_metrics} ({out_metrics.stat().st_size} bytes)")
     print(f"wrote {out_geo} ({out_geo.stat().st_size} bytes)")
 

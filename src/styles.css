@@ -85,14 +85,13 @@ h1 {
   padding: 14px 14px 20px;
 }
 
-.toggles {
-  margin: 0;
+.source {
+  margin: 0 0 14px;
   padding: 0;
   border: 0;
-  display: grid;
-  gap: 8px;
 }
 
+.source legend,
 .toggles legend {
   padding: 0;
   margin-bottom: 8px;
@@ -100,6 +99,48 @@ h1 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.source p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.segment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.segment-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.25;
+  cursor: pointer;
+}
+
+.segment-option.on {
+  border-color: #6d5a2a;
+  background: #241c0e;
+}
+
+.segment-option input {
+  accent-color: var(--accent);
+}
+
+.toggles {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: 8px;
 }
 
 .toggle {
