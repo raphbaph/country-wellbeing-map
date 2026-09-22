@@ -99,6 +99,56 @@ test("fewer than half of the enabled indicators leaves a country unscored", () =
   assert.deepEqual(ranked.map((row) => row.id), ["full"]);
 });
 
+test("income Gini is inverted so a more equal country scores higher", () => {
+  const gini: IndicatorMeta = {
+    ...indicators[0],
+    id: "incomeGini",
+    label: "Income inequality (Gini)",
+    higherIsBetter: false,
+    format: "gini",
+  };
+  const ranked = rankCountries(
+    [
+      country("equal", { incomeGini: { v: 25, y: 2023 } }),
+      country("unequal", { incomeGini: { v: 55, y: 2022 } }),
+    ],
+    [gini],
+    new Set(["incomeGini"]),
+  );
+  assert.deepEqual(
+    ranked.map((row) => [row.id, row.score, row.parts[0].normalized]),
+    [
+      ["equal", 100, 1],
+      ["unequal", 0, 0],
+    ],
+  );
+});
+
+test("a higher Lynn & Becker IQ ranks above a lower one", () => {
+  const iq: IndicatorMeta = {
+    ...indicators[0],
+    id: "avgIq",
+    label: "Average IQ (Lynn & Becker 2019)",
+    higherIsBetter: true,
+    format: "iq",
+  };
+  const ranked = rankCountries(
+    [
+      country("low", { avgIq: { v: 80, y: 2019 } }),
+      country("high", { avgIq: { v: 105, y: 2019 } }),
+    ],
+    [iq],
+    new Set(["avgIq"]),
+  );
+  assert.deepEqual(
+    ranked.map((row) => [row.id, row.score]),
+    [
+      ["high", 100],
+      ["low", 0],
+    ],
+  );
+});
+
 test("no enabled indicators produces an empty ranking", () => {
   const ranked = rankCountries(
     [country("a", { avgIncome: { v: 1, y: 2023 } })],

@@ -4,6 +4,8 @@
 Public inputs (downloaded on each run):
   - Gapminder catalog, geometries, and indicator series from
     github.com/dinorgcom/artmarcovici-next public/gapminder
+    (GDP per capita, homicide, life expectancy, income Gini)
+  - data/lynn-becker-2019-iq.json (Lynn & Becker 2019 / NIQ V1.3.3, QNW+SAS)
   - Our World in Data "daily median income" CSV (World Bank PIP)
   - ISO 3166 names/codes
 
@@ -35,6 +37,9 @@ ANCHOR = 2023
 FALLBACK_MIN = 2018
 MEDIAN_INCOME_MIN = 2015
 MEDIAN_INCOME_MAX = 2025
+# Income Gini is a household survey, like median income, not an annual series.
+GINI_MIN = 2015
+GINI_MAX = 2025
 UA = {"User-Agent": "country-wellbeing-map/1.0"}
 
 
@@ -58,6 +63,23 @@ def pick_year(by_year: dict[int, float], anchor: int = ANCHOR) -> tuple[int, flo
         return None
     year = max(candidates)
     return year, by_year[year]
+
+
+def survey_at(indicator: dict, country_id: str, lo: int, hi: int) -> tuple[int, float] | None:
+    """Latest published survey year inside [lo, hi]. Older and later years are ignored."""
+    rows = indicator["data"].get(country_id)
+    if not rows:
+        return None
+    best: tuple[int, float] | None = None
+    for year, value in zip(indicator["years"], rows):
+        if value is None:
+            continue
+        year = int(year)
+        if year < lo or year > hi:
+            continue
+        if best is None or year > best[0]:
+            best = (year, float(value))
+    return best
 
 
 def series_at(indicator: dict, country_id: str) -> tuple[int, float] | None:
@@ -160,6 +182,7 @@ def main() -> None:
     gdp = fetch_json(f"{GM}/indicators/gdppercapita_us_inflation_adjusted.json")
     murder = fetch_json(f"{GM}/indicators/murder_per_100000_people.json")
     life = fetch_json(f"{GM}/indicators/life_expectancy_years.json")
+    gini = fetch_json(f"{GM}/indicators/inequality_index_gini.json")
     iso = load_iso()
     print("downloading median income...")
     median_income = load_median_income()
@@ -178,16 +201,18 @@ def main() -> None:
         year, value = found
         values[cid][key] = {"v": value, "y": year}
 
-    for cid in set(gdp["data"]) | set(murder["data"]) | set(life["data"]):
+    for cid in set(gdp["data"]) | set(murder["data"]) | set(life["data"]) | set(gini["data"]):
         put(cid, "avgIncome", series_at(gdp, cid))
         put(cid, "violentCrime", series_at(murder, cid))
         put(cid, "lifeExpectancy", series_at(life, cid))
+        put(cid, "incomeGini", survey_at(gini, cid, GINI_MIN, GINI_MAX))
 
     for code, obs in median_income.items():
         # OWID uses ISO3. Kosovo may appear as xkx; keep both if present.
         cid = "kos" if code == "xkx" else code
         values[cid]["medIncome"] = {"v": obs[1], "y": obs[0]}
 
+    wid_wealth: dict[str, dict] = defaultdict(dict)
     for alpha2, series in wid.items():
         meta = iso.get(alpha2)
         if not meta:
@@ -195,8 +220,33 @@ def main() -> None:
         cid = meta["iso3"]
         mean_years = {int(y): v for y, v in series.get("mean", {}).items()}
         median_years = {int(y): v for y, v in series.get("median", {}).items()}
-        put(cid, "avgWealth", pick_year(mean_years))
-        put(cid, "medWealth", pick_year(median_years))
+        mean = pick_year(mean_years)
+        median = pick_year(median_years)
+        if mean:
+            wid_wealth[cid]["avgWealth"] = {"v": mean[1], "y": mean[0]}
+        if median:
+            wid_wealth[cid]["medWealth"] = {"v": median[1], "y": median[0]}
+
+    iq_path = ROOT / "data" / "lynn-becker-2019-iq.json"
+    iq_file = json.loads(iq_path.read_text())
+    iq_year = int(iq_file["year"])
+    for cid, row in iq_file["countries"].items():
+        values[cid]["avgIq"] = {"v": row["iq"], "y": iq_year}
+        names.setdefault(cid, row["name"])
+
+    ubs_path = ROOT / "data" / "ubs-wealth.json"
+    ubs = json.loads(ubs_path.read_text())
+    ubs_year = int(ubs["dataYear"])
+    ubs_wealth: dict[str, dict] = {}
+    for cid, row in ubs["countries"].items():
+        entry = {}
+        if "mean" in row:
+            entry["avgWealth"] = {"v": row["mean"], "y": ubs_year}
+        if "median" in row:
+            entry["medWealth"] = {"v": row["median"], "y": ubs_year}
+        if entry:
+            ubs_wealth[cid] = entry
+            names.setdefault(cid, row.get("name", cid.upper()))
 
     # Shapes. Drop Antarctica so the fitted projection is the inhabited world.
     rings_by_id: dict[str, list] = defaultdict(list)
@@ -227,10 +277,18 @@ def main() -> None:
     features.sort(key=lambda f: f["id"])
 
     countries = []
-    for cid in sorted(values):
-        if not values[cid]:
+    for cid in sorted(set(values) | set(wid_wealth) | set(ubs_wealth)):
+        wealth = {}
+        if cid in wid_wealth:
+            wealth["wid"] = wid_wealth[cid]
+        if cid in ubs_wealth:
+            wealth["ubs"] = ubs_wealth[cid]
+        if not values.get(cid) and not wealth:
             continue
-        countries.append({"id": cid, "name": names.get(cid, cid.upper()), "values": values[cid]})
+        entry = {"id": cid, "name": names.get(cid, cid.upper()), "values": values.get(cid, {})}
+        if wealth:
+            entry["wealth"] = wealth
+        countries.append(entry)
 
     metrics = {
         "anchorYear": ANCHOR,
@@ -238,22 +296,22 @@ def main() -> None:
             {
                 "id": "avgWealth",
                 "label": "Average wealth",
-                "detail": "Mean net personal wealth per adult",
-                "unit": "2023 USD PPP",
+                "detail": "Mean wealth per adult · UBS GWR, market USD",
+                "unit": "market USD per adult",
                 "higherIsBetter": True,
                 "format": "usd",
-                "source": "WID.world ahweal (equal-split adults), local currency ÷ xlcusp",
-                "yearNote": "2023, or latest year in 2018–2023",
+                "source": "UBS Global Wealth Report 2026, top 30 by average wealth",
+                "yearNote": "End of 2025",
             },
             {
                 "id": "medWealth",
                 "label": "Median wealth",
-                "detail": "Median net personal wealth per adult",
-                "unit": "2023 USD PPP",
+                "detail": "Median wealth per adult · UBS GWR, market USD",
+                "unit": "market USD per adult",
                 "higherIsBetter": True,
                 "format": "usd",
-                "source": "WID.world thweal at the 50th percentile (p50p51), same PPP conversion",
-                "yearNote": "2023, or latest year in 2018–2023",
+                "source": "UBS Global Wealth Report 2026, top 30 by median wealth",
+                "yearNote": "End of 2025",
             },
             {
                 "id": "avgIncome",
@@ -276,6 +334,16 @@ def main() -> None:
                 "yearNote": "Latest survey year in 2015–2025",
             },
             {
+                "id": "incomeGini",
+                "label": "Income inequality (Gini)",
+                "detail": "0–100 index · higher means more unequal",
+                "unit": "Gini index, 0 (equal) to 100 (unequal)",
+                "higherIsBetter": False,
+                "format": "gini",
+                "source": "Gapminder inequality_index_gini (World Bank Gini index, SI.POV.GINI)",
+                "yearNote": "Latest survey year in 2015–2025",
+            },
+            {
                 "id": "violentCrime",
                 "label": "Violent crimes",
                 "detail": "Homicide rate (age-standardized)",
@@ -295,7 +363,54 @@ def main() -> None:
                 "source": "Gapminder life_expectancy_years",
                 "yearNote": "2023, or latest year in 2018–2023",
             },
+            {
+                "id": "avgIq",
+                "label": "Average IQ (Lynn & Becker 2019)",
+                "detail": "National IQ compilation · scientifically contested",
+                "unit": "IQ points, British mean 100",
+                "higherIsBetter": True,
+                "format": "iq",
+                "source": "Lynn & Becker 2019, NIQ dataset V1.3.3 column QNW+SAS",
+                "yearNote": "2019 cross-section",
+            },
         ],
+        "wealthSources": {
+            "default": "ubs",
+            "options": [
+                {
+                    "id": "ubs",
+                    "label": "UBS GWR (market USD)",
+                    "avgWealth": {
+                        "detail": "Mean wealth per adult · UBS GWR, market USD",
+                        "unit": "market USD per adult",
+                        "source": "UBS Global Wealth Report 2026, top 30 by average wealth",
+                        "yearNote": "End of 2025",
+                    },
+                    "medWealth": {
+                        "detail": "Median wealth per adult · UBS GWR, market USD",
+                        "unit": "market USD per adult",
+                        "source": "UBS Global Wealth Report 2026, top 30 by median wealth",
+                        "yearNote": "End of 2025",
+                    },
+                },
+                {
+                    "id": "wid",
+                    "label": "WID (PPP)",
+                    "avgWealth": {
+                        "detail": "Mean net personal wealth per adult · WID, USD PPP",
+                        "unit": "2023 USD PPP",
+                        "source": "WID.world ahweal (equal-split adults), local currency ÷ xlcusp",
+                        "yearNote": "2023, or latest year in 2018–2023",
+                    },
+                    "medWealth": {
+                        "detail": "Median net personal wealth per adult · WID, USD PPP",
+                        "unit": "2023 USD PPP",
+                        "source": "WID.world thweal at the 50th percentile (p50p51), same PPP conversion",
+                        "yearNote": "2023, or latest year in 2018–2023",
+                    },
+                },
+            ],
+        },
         "countries": countries,
     }
 
@@ -311,10 +426,27 @@ def main() -> None:
     print(f"shaped but no data: {len(shaped - scored)}")
     print(f"data but no shape: {sorted(scored - shaped)[:30]} ({len(scored - shaped)})")
     counts = {ind["id"]: 0 for ind in metrics["indicators"]}
-    for c in countries:
-        for key in c["values"]:
+    wealth_counts = {"ubs": {"avgWealth": 0, "medWealth": 0}, "wid": {"avgWealth": 0, "medWealth": 0}}
+    for country in countries:
+        for key in country["values"]:
             counts[key] += 1
+        for source, fields in country.get("wealth", {}).items():
+            for key in fields:
+                wealth_counts[source][key] += 1
     print("coverage", counts)
+    print("wealth", wealth_counts)
+    for cid in ("che", "usa", "lux", "aus", "deu", "bra", "swe", "zaf", "jpn", "gbr"):
+        row = next(country for country in countries if country["id"] == cid)
+        print(
+            cid,
+            row["name"],
+            "ubs",
+            row.get("wealth", {}).get("ubs"),
+            "gini",
+            row["values"].get("incomeGini"),
+            "iq",
+            row["values"].get("avgIq"),
+        )
     print(f"wrote {out_metrics} ({out_metrics.stat().st_size} bytes)")
     print(f"wrote {out_geo} ({out_geo.stat().st_size} bytes)")
 
